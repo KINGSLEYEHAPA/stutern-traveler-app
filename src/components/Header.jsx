@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Search from "./Search";
 import { RiMenu5Fill } from "react-icons/ri";
+import kingsley from "../assets/images/kingsley.jpg";
 
 const Header = () => {
   const [isMobile, setIsMobile] = useState(true);
@@ -10,41 +11,73 @@ const Header = () => {
       <div>
         <Link
           to="/"
-          className="text-sm sm:text-md md:text-lg lg:text-xl text-white  pr-3 "
+          className="text-md ssm:text-xl md:text-2xl lg:text-xl text-orange-600 font-bold  pr-3 "
         >
           Traveler
         </Link>
       </div>
 
-      <div className=" gap-6 hidden ssm:flex">
-        <p>Home</p>
-        <p>Attractions</p>
-        <p>Locations</p>
+      <div className=" gap-8 hidden ssm:flex text-white">
+        <Link
+          to="/"
+          className="hover:text-orange-600  hover:bg-white p-1 rounded-md font-bold"
+        >
+          <p>Home</p>{" "}
+        </Link>
+        <Link
+          to="/"
+          className="hover:text-orange-600  hover:bg-white p-1 rounded-md font-bold"
+        >
+          {" "}
+          <p>Attractions</p>{" "}
+        </Link>
+        <Link
+          to="/"
+          className="hover:text-orange-600  hover:bg-white p-1 rounded-md font-bold"
+        >
+          {" "}
+          <p>Locations</p>{" "}
+        </Link>
       </div>
 
       {isMobile && (
         <div
           className={
             isMobile
-              ? "absolute top-24 w-full right-4 px-10 py-5 z-1000 text-center space-y-2 bg-orange-600 ssm transition-all:hidden"
+              ? " backdrop-blur-xl flex flex-col gap-6 bg-white/30 absolute ssm:hidden  top-24 w-full right-4 px-10 py-5 z-20 text-center h-56 text-white space-y-2  ssm transition-all:hidden"
               : "hidden"
           }
         >
-          <p>Home</p>
-          <p>Attractions</p>
-          <p>Location</p>
+          <Link to="/" className="hover:text-orange-600">
+            <p>Home</p>{" "}
+          </Link>
+          <Link to="/" className=" hover:text-orange-600">
+            {" "}
+            <p>Attractions</p>{" "}
+          </Link>
+          <Link to="/" className="hover:text-orange-600">
+            {" "}
+            <p>Locations</p>{" "}
+          </Link>
+          <Link to="/" className="hover:text-orange-600 ">
+            <p>Travel News</p>{" "}
+          </Link>
         </div>
       )}
       <Search />
       <div className="w-36 h-20  text-center py-2 ml-3">
-        <img className="w-6 h-6 rounded-full bg-white mx-auto" src="" alt="" />
+        <img
+          className="w-6 h-6 rounded-full bg-white mx-auto"
+          src={kingsley}
+          alt=""
+        />
         <h3 className="text-xs pt-2 text-white">Welcome Kingsley</h3>
       </div>
       <span
         onClick={() => {
           setIsMobile(!isMobile);
         }}
-        className="text-white ml-2 md:text-2xl "
+        className="text-orange-600 ml-2 mr-6 text-xl md:text-3xl ssm:hidden"
       >
         <RiMenu5Fill />
       </span>
