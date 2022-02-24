@@ -36,6 +36,13 @@ const Header = () => {
           className="hover:text-orange-600  hover:bg-white p-1 rounded-md font-bold"
         >
           {" "}
+          <p>News</p>{" "}
+        </Link>
+        <Link
+          to="/"
+          className="hover:text-orange-600  hover:bg-white p-1 rounded-md font-bold"
+        >
+          {" "}
           <p>Locations</p>{" "}
         </Link>
       </div>
