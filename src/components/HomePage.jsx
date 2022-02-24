@@ -6,7 +6,7 @@ import Carousel from "./Carousel";
 
 const HomePage = () => {
   return (
-    <div className="flex flex-col w-screen justify-start ">
+    <div className="flex flex-col w-screen justify-start min-h-[100rem] ">
       <div className="w-full flex flex-col h-4/5 pr-6 md:pr-0 ssm:flex ssm:flex-col gap-14 md:gap-1 md:flex md:flex-row md:justify-between md:items-center md:w-full md:gap-5 md:relative md:left-24  ">
         <div className=" h-full w-full flex flex-col p-4  relative mx-2 ssm:h-[25rem] md:bottom-24 md:w-[85rem] md:h-[24rem]">
           <img

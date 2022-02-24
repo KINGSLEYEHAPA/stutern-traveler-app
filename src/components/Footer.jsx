@@ -8,8 +8,8 @@ import {
 
 const Footer = () => {
   return (
-    <div className="w-full h-[35rem] bg-sky-300 flex flex-col justify-center items-center gap-10 px-10 ">
-      <div>
+    <div className="w-full h-[35rem] bg-sky-300 flex flex-col justify-center items-center gap-10 px-10 md:flex md:flex-row md:gap-14 md:justify-start md:items-center md:h-[23rem] ">
+      <div className="md:w-1/3 md:ml-20">
         <h3 className="border-b-4 border-orange-600 pb-4 text-white text-2xl">
           About Traveler
         </h3>
@@ -35,7 +35,7 @@ const Footer = () => {
           <RiLinkedinFill />
         </span>
       </div>
-      <div className="flex flex-col gap-8 justify-center items-center">
+      <div className="flex flex-col gap-8 justify-center items-center md:mt-24">
         <textarea
           className="w-64 outline-none p-2 bg-sky-400 text-white rounded-lg placeholder:text-center placeholder:text-white placeholder:relative placeholder:top-10 "
           rows="5"
