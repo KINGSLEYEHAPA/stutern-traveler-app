@@ -1,17 +1,17 @@
 import React from "react";
 import GoogleMapReact from "google-map-react";
 import { location } from "../dummyData";
-import { blueMap } from "../myMapStyles";
+import { skyOrange } from "../myMapStyles";
 
 const Map = () => {
   return (
     <div className="map">
-      <div className="w-screen h-96 mb-8">
+      <div className="w-full md:w-full h-96 mb-10 mt-2 mx-auto flex ">
         <GoogleMapReact
           bootstrapURLKeys={{ key: process.env.REACT_APP_API_KEY }}
           defaultCenter={location}
           defaultZoom={10}
-          options={{ styles: blueMap }}
+          options={{ styles: skyOrange }}
         >
           {/* <LocationPin
             lat={location.lat}

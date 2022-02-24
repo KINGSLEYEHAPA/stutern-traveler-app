@@ -43,7 +43,6 @@ const HomePage = () => {
           </div>
         </aside>
       </div>
-      <div className="h-72 bg-white text-center mx-5 mr-8 my-5">Map</div>
       <Map />
 
       <Carousel />
