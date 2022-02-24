@@ -17,9 +17,9 @@ const HomePage = () => {
           <div className="absolute w-2/3 top-20  left-24 h-44 bg-white/24 flex text-left flex-col justify-center items-center ssm:w-full ssm:left-0  ">
             {" "}
             <h1 className="text-5xl text-orange-600 lg:translate-x-[-5rem]">
-              Travel the World!
+              Explore the World!
             </h1>
-            <p className="text-white ml-2 mt-5 sm:ml-8 ssm:ml-16 ssm:w-96 lg:translate-x-[-5rem] ">
+            <p className="text-white mr-11 mt-5 sm:ml-8 ssm:ml-16 ssm:w-96 lg:translate-x-[-5rem] ">
               Visit wonderful and exciting places around the globe. Plan you
               next trip.
             </p>
