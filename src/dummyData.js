@@ -89,3 +89,9 @@ export const hotelCards = [
     ],
   },
 ];
+
+export const location = {
+  address: "1600 Amphitheatre Parkway, Mountain View, california.",
+  lat: 5.55,
+  lng: 5.79,
+};
