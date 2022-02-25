@@ -5,7 +5,7 @@ import { skyOrange } from "../myMapStyles";
 
 const Map = () => {
   return (
-    <div className="map">
+    <div className="w-screen p-8">
       <div className="w-full md:w-full h-96 mb-10 mt-2 mx-auto flex ">
         <GoogleMapReact
           bootstrapURLKeys={{ key: process.env.REACT_APP_API_KEY }}

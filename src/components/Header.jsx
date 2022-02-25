@@ -11,7 +11,7 @@ const Header = () => {
       <div>
         <Link
           to="/"
-          className="text-md ssm:text-xl md:text-2xl lg:text-3xl lg:text-xl text-orange-600 font-bold  pr-3 "
+          className="text-md ssm:text-xl md:text-2xl lg:text-3xl  text-orange-600 font-bold  pr-3 "
         >
           Traveler
         </Link>
@@ -84,7 +84,7 @@ const Header = () => {
         onClick={() => {
           setIsMobile(!isMobile);
         }}
-        className="text-orange-600 ml-2 mr-6 text-xl md:text-3xl ssm:hidden"
+        className="text-orange-600 ml-2 mr-6 text-2xl ssm:hidden"
       >
         <RiMenu5Fill />
       </span>
