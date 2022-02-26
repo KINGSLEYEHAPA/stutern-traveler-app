@@ -1,11 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Search from "./Search";
 import { RiMenu5Fill } from "react-icons/ri";
 import kingsley from "../assets/images/kingsley.jpg";
+import { getWeatherData } from "../dummyData";
+import { useDispatch } from "react-redux";
 
 const Header = () => {
   const [isMobile, setIsMobile] = useState(true);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getWeatherData);
+  }, [dispatch]);
+
   return (
     <div className="text-red-800 items-center h-24 relative  flex justify-between w-screen px-6">
       <div>

@@ -6,7 +6,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from "../App";
 
 const ApplicationRoutes = () => {
-  console.log(store);
   return (
     <Provider store={store}>
       <BrowserRouter>

@@ -95,8 +95,8 @@ export const hotelCards = [
 
 export let location = {
   address: "",
-  lat: 5.55,
-  lng: 5.79,
+  lat: 5.554399,
+  lng: 5.793201,
 };
 
 export const displayLocationInfo = (position) => {
@@ -112,11 +112,17 @@ if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(displayLocationInfo);
 }
 
+const API_key = "eebe977cc40a76610abf0f365528ca2d";
+
 export const getWeatherData = async (dispatch) => {
   try {
     dispatch({ type: actionTypes.FETCH_DATA_START });
-    const res = await axios.get();
+    const res = await axios.get(
+      `https://api.openweathermap.org/data/2.5/weather?lat=${location.lat}&lon=${location.lng}&appid=${API_key}`
+    );
     const resWeather = await res.json();
+    console.log(resWeather);
+    console.log(location);
     dispatch({ type: actionTypes.FETCH_DATA_SUCCESS, payload: resWeather });
 
     console.log(resWeather);
