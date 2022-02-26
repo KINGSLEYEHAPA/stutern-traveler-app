@@ -1,4 +1,8 @@
 import axios from "axios";
+import {
+  getWeatherDataError,
+  getWeatherDataSuccess,
+} from "./redux/actions/actionCreators";
 import { actionTypes } from "./redux/actions/actionTypes";
 
 export const hotelCards = [
@@ -112,21 +116,19 @@ if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(displayLocationInfo);
 }
 
-const API_key = "eebe977cc40a76610abf0f365528ca2d";
-
+const API_key = process.env.REACT_APP_API_KEY_WEATHER;
 export const getWeatherData = async (dispatch) => {
   try {
     dispatch({ type: actionTypes.FETCH_DATA_START });
-    const res = await axios.get(
-      `https://api.openweathermap.org/data/2.5/weather?lat=${location.lat}&lon=${location.lng}&appid=${API_key}`
+    const resWeather = await axios.get(
+      `https://api.openweathermap.org/data/2.5/weather?lat=${location.lat}&lon=${location.lng}&units=metric&appid=${API_key}`
     );
-    const resWeather = await res.json();
-    console.log(resWeather);
-    console.log(location);
-    dispatch({ type: actionTypes.FETCH_DATA_SUCCESS, payload: resWeather });
 
     console.log(resWeather);
+    console.log(location);
+    dispatch(getWeatherDataSuccess(resWeather?.data));
   } catch (err) {
-    dispatch({ type: actionTypes.FETCH_DATA_ERROR, payload: err.message });
+    console.log(err.message);
+    dispatch(getWeatherDataError(err.message));
   }
 };
