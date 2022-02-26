@@ -1,14 +1,10 @@
 import { combineReducers } from "redux";
 import appStateReducer from "./appStateReducer";
-import attractionsReducer from "./attractionsReducer";
-import newsReducer from "./newsReducer";
-import weatherReducer from "./weatherReducer";
+import appDataReducer from "./appDataReducer";
 
 const rootReducer = combineReducers({
   appState: appStateReducer,
-  attractions: attractionsReducer,
-  news: newsReducer,
-  weather: weatherReducer,
+  appData: appDataReducer,
 });
 
 export default rootReducer;

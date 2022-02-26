@@ -1,1 +1,5 @@
-export const actionTypes = {};
+export const actionTypes = {
+  FETCH_DATA_START: "FETCH_DATA_START",
+  FETCH_DATA_SUCCESS: "FETCH_DATA_SUCCESS",
+  FETCH_DATA_ERROR: "FETCH_DATA_ERROR",
+};

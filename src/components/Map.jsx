@@ -2,6 +2,7 @@ import React from "react";
 import GoogleMapReact from "google-map-react";
 import { location } from "../dummyData";
 import { skyOrange } from "../myMapStyles";
+import LocationPin from "./LocationPin";
 
 const Map = () => {
   return (
@@ -13,11 +14,11 @@ const Map = () => {
           defaultZoom={10}
           options={{ styles: skyOrange }}
         >
-          {/* <LocationPin
+          <LocationPin
             lat={location.lat}
             lng={location.lng}
             text={location.address}
-          /> */}
+          />
         </GoogleMapReact>
       </div>
     </div>

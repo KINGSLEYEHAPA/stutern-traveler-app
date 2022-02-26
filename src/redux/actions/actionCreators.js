@@ -1,11 +1,11 @@
 import axios from "axios";
+import { actionTypes } from "./actionTypes";
 
-export const getAttractions = async (dispatch) => {
+export const getData = async (dispatch) => {
   try {
-    const res = await axios.get(
-      "https://ig-food-menus.herokuapp.com/our-foods"
-    );
+    dispatch({ type: actionTypes.FETCH_DATA_START });
+    const resWeather = await axios.get();
 
-    console.log(res);
+    console.log(resWeather);
   } catch (err) {}
 };

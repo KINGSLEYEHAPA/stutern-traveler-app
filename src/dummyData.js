@@ -1,3 +1,6 @@
+import axios from "axios";
+import { actionTypes } from "./redux/actions/actionTypes";
+
 export const hotelCards = [
   {
     imageSrc:
@@ -90,8 +93,34 @@ export const hotelCards = [
   },
 ];
 
-export const location = {
-  address: "1600 Amphitheatre Parkway, Mountain View, california.",
+export let location = {
+  address: "",
   lat: 5.55,
   lng: 5.79,
+};
+
+export const displayLocationInfo = (position) => {
+  const lng = position.coords.longitude;
+  const lat = position.coords.latitude;
+  console.log(lat, lng);
+  location.lat = lat;
+  location.lng = lng;
+  location.address = "This is your current location.";
+};
+
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(displayLocationInfo);
+}
+
+export const getWeatherData = async (dispatch) => {
+  try {
+    dispatch({ type: actionTypes.FETCH_DATA_START });
+    const res = await axios.get();
+    const resWeather = await res.json();
+    dispatch({ type: actionTypes.FETCH_DATA_SUCCESS, payload: resWeather });
+
+    console.log(resWeather);
+  } catch (err) {
+    dispatch({ type: actionTypes.FETCH_DATA_ERROR, payload: err.message });
+  }
 };
