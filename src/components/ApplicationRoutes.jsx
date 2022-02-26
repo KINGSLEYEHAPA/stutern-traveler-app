@@ -1,10 +1,12 @@
 import React from "react";
 import { Provider } from "react-redux";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import App from "../App";
 import store from "../redux/store";
 
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import App from "../App";
+
 const ApplicationRoutes = () => {
+  console.log(store);
   return (
     <Provider store={store}>
       <BrowserRouter>

@@ -1,9 +1,7 @@
-import { actionTypes } from "../action/actiontype";
-
 const attractionsData = {};
 
 const attractionsReducer = (state = attractionsData, action) => {
-  const { type, payload } = action;
+  const { type } = action;
 
   switch (type) {
     default:

@@ -38,13 +38,6 @@ const Header = () => {
           {" "}
           <p>News</p>{" "}
         </Link>
-        <Link
-          to="/"
-          className="hover:text-orange-600  hover:bg-white p-1 rounded-md font-bold"
-        >
-          {" "}
-          <p>Locations</p>{" "}
-        </Link>
       </div>
 
       {isMobile && (
@@ -62,10 +55,7 @@ const Header = () => {
             {" "}
             <p>Attractions</p>{" "}
           </Link>
-          <Link to="/" className="hover:text-orange-600">
-            {" "}
-            <p>Locations</p>{" "}
-          </Link>
+
           <Link to="/" className="hover:text-orange-600 ">
             <p>Travel News</p>{" "}
           </Link>
