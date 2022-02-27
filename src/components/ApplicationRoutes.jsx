@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from "../App";
 import Attractions from "./Attractions";
 import HomePage from "./HomePage";
+import News from "./News";
 
 const ApplicationRoutes = () => {
   return (
@@ -14,7 +15,8 @@ const ApplicationRoutes = () => {
         <Routes>
           <Route path="/" element={<App />}>
             <Route index element={<HomePage />} />
-            <Route path="/attractions" element={<Attractions />} />
+            <Route path="attractions" element={<Attractions />} />
+            <Route path="attractions/news" element={<News />} />
           </Route>
         </Routes>
       </BrowserRouter>

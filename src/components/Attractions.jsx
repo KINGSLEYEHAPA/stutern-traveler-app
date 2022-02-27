@@ -7,7 +7,7 @@ import Map from "./Map";
 
 const Attractions = () => {
   return (
-    <div className="h-[125rem] w-full p-6">
+    <div className="h-[150rem] md:h-[125rem] w-full p-6">
       <div className="w-full bg-white h-[22rem] shadow-2xl mx-auto  rounded-xl relative  ">
         <img src={imageOne} alt="" className="w-full h-full rounded-xl" />
         <div className="absolute top-8 left-7 w-5/6 h-[18rem] bg-orange-600/20 m-4 text-left py-2 px-4 ssm:flex ssm:flex-row  ssm:gap-24">
@@ -22,14 +22,14 @@ const Attractions = () => {
             </p>
           </div>
           <div className="flex mt-10 w-full justify-between px-4 gap-2 text-orange-600 ssm:flex ssm:flex-col ssm:relative ssm:left-6 md:left-8 lg:left-28 xl:left-60">
-            <div className="bg-white rounded-lg h-12 w-28 text-center pt-2 hover:text-white hover:bg-orange-600  ">
+            <div className="bg-white rounded-lg h-16 w-28 text-center py-2 hover:text-white hover:bg-orange-600  ">
               <span className="text-sm "> Temp: 9°C</span>
               <span className=" text-sm"> Snow</span>
             </div>
-            <div className="bg-white rounded-lg h-12 w-28 text-center pt-2 hover:text-white hover:bg-orange-600">
+            <div className="bg-white rounded-lg h-16 w-28 text-center py-2 hover:text-white hover:bg-orange-600">
               <span className=" text-xs"> Wind Speed: 2km/s</span>
             </div>
-            <div className="bg-white/50 rounded-lg h-12 w-28 ">
+            <div className="bg-white/50 rounded-lg h-16 w-28 ">
               <img
                 className="w-full h-full rounded"
                 src="https://cdn1.vectorstock.com/i/1000x1000/86/95/weather-cloud-rainy-icon-vector-19558695.jpg"
@@ -39,13 +39,13 @@ const Attractions = () => {
           </div>
         </div>
       </div>
-      <div className="w-full h-min-screen bg-white p-6 mt-5 rounded-lg ">
-        <h2 className=" mb-5 text-xl text-orange-600 ssm:text-3xl text-left ml-4">
+      <div className="w-full h-min-screen bg-white p-10 mt-5 rounded-lg ">
+        <h2 className=" mb-5 text-xl text-orange-600 ssm:text-3xl text-left ">
           News Headlines{" "}
         </h2>
         <div className="flex flex-col gap-5">
           <Link to="news">
-            <div className="flex gap-6 shadow-2xl py-4 px-4 hover:scale-105 rounded-lg">
+            <div className="flex gap-6 shadow-2xl py-4 px-4 hover:scale-105 rounded-lg bg-orange-600/30">
               <img
                 className="w-32 h-28 md:w-44 md:h-24 rounded-lg"
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa5-tCW_twG5OXhcX56JSSYYCLQ8_7-UbfgA&usqp=CAU"
@@ -66,7 +66,7 @@ const Attractions = () => {
             </div>
           </Link>
           <Link to="news">
-            <div className="flex gap-6 shadow-2xl py-4 px-4 hover:scale-105 rounded-lg">
+            <div className="flex gap-6 shadow-2xl py-4 px-4 hover:scale-105 rounded-lg bg-orange-600/30">
               <img
                 className="w-32 h-28 md:w-44 md:h-24 rounded-lg"
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa5-tCW_twG5OXhcX56JSSYYCLQ8_7-UbfgA&usqp=CAU"
@@ -87,7 +87,7 @@ const Attractions = () => {
             </div>
           </Link>
           <Link to="news">
-            <div className="flex gap-6 shadow-2xl py-4 px-4 hover:scale-105 rounded-lg">
+            <div className="flex gap-6 shadow-2xl py-4 px-4 hover:scale-105 rounded-lg bg-orange-600/30">
               <img
                 className="w-32 h-28 md:w-44 md:h-24 rounded-lg"
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa5-tCW_twG5OXhcX56JSSYYCLQ8_7-UbfgA&usqp=CAU"
@@ -108,7 +108,7 @@ const Attractions = () => {
             </div>
           </Link>
           <Link to="news">
-            <div className="flex gap-6 shadow-2xl py-4 px-4 hover:scale-105 rounded-lg">
+            <div className="flex gap-6 shadow-2xl py-4 px-4 hover:scale-105 rounded-lg bg-orange-600/30">
               <img
                 className="w-32 h-28 md:w-44 md:h-24 rounded-lg"
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa5-tCW_twG5OXhcX56JSSYYCLQ8_7-UbfgA&usqp=CAU"

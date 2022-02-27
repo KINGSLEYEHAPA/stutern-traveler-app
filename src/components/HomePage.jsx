@@ -11,7 +11,7 @@ const HomePage = () => {
       <div className="w-full flex flex-col h-4/5 pr-6 md:pr-0 ssm:flex ssm:flex-col gap-14 md:gap-1 md:flex md:flex-row md:justify-between md:items-center md:w-full md:gap-5 md:relative md:left-24  ">
         <div className=" h-full w-full flex flex-col p-4  relative mx-2 ssm:h-[25rem] md:bottom-24 md:w-[85rem] md:h-[24rem]">
           <img
-            className="w-full h-full rounded-xl"  
+            className="w-full h-full rounded-xl"
             src={mainImage}
             alt="image2"
           />
@@ -25,7 +25,7 @@ const HomePage = () => {
               next trip.
             </p>
             <button className="bg-orange-600 text-white py-2 px-4 rounded-lg mt-6 hover:bg-white hover:scale-105 hover:text-orange-600 lg:translate-x-[-9rem] translate-x-[-3.8rem] sm:translate-x-[-5rem]">
-              <Link to="/attractions">See Popular Attractions</Link>
+              <Link to="/attractions">See Popular Attractions </Link>
             </button>
           </div>
         </div>

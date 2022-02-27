@@ -51,7 +51,7 @@ const Header = () => {
         <div
           className={
             isMobile
-              ? " backdrop-blur-xl flex flex-col gap-6 bg-white/30 absolute ssm:hidden  top-24 w-full right-4 px-10 py-5 z-20 text-center h-56 text-white space-y-2  ssm transition-all:hidden"
+              ? " backdrop-blur-xl flex flex-col gap-6 bg-orange-600/20 absolute ssm:hidden  top-24 w-full right-4 px-10 py-5 z-20 text-center h-56 text-white space-y-2  ssm transition-all:hidden"
               : "hidden"
           }
         >
@@ -81,7 +81,7 @@ const Header = () => {
         onClick={() => {
           setIsMobile(!isMobile);
         }}
-        className="text-orange-600 ml-2 mr-6 text-2xl ssm:hidden"
+        className="text-orange-600 ml-2 mr-6 text-2xl ssm:hidden hover:text-white"
       >
         <RiMenu5Fill />
       </span>
