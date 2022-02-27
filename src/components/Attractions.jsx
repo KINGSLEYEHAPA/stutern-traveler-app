@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import imageOne from "../assets/images/355173.jpg";
 // import "../assets/images/355119.jpg";
 
@@ -34,6 +35,97 @@ const Attractions = () => {
               />{" "}
             </div>
           </div>
+        </div>
+      </div>
+      <div className="w-full h-min-screen bg-white p-6 mt-5 rounded-lg ">
+        <h2 className=" mb-5 text-2xl text-orange-600 ssm:text-3xl text-center">
+          News Headlines{" "}
+        </h2>
+        <div className="flex flex-col gap-5">
+          <Link to="news">
+            <div className="flex gap-6 shadow-2xl py-4 px-4">
+              <img
+                className=" w-44 h-24 rounded-lg"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa5-tCW_twG5OXhcX56JSSYYCLQ8_7-UbfgA&usqp=CAU"
+                alt=""
+              />
+
+              <div>
+                <h3 className="text-lg ssm:text-xl text-orange-600">
+                  {" "}
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                </h3>
+                <p className="text-sm py-1 text-orange-600/70 ssm:text-md">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                </p>
+              </div>
+            </div>
+          </Link>
+          <Link to="news">
+            <div className="flex gap-6 shadow-2xl py-4 px-4">
+              <img
+                className=" w-44 h-24 rounded-lg"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa5-tCW_twG5OXhcX56JSSYYCLQ8_7-UbfgA&usqp=CAU"
+                alt=""
+              />
+
+              <div>
+                <h3 className="text-lg ssm:text-xl text-orange-600">
+                  {" "}
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                </h3>
+                <p className="text-sm py-1 text-orange-600/70 ssm:text-md">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                </p>
+              </div>
+            </div>
+          </Link>
+          <Link to="news">
+            <div className="flex gap-6 shadow-2xl py-4 px-4">
+              <img
+                className=" w-44 h-24 rounded-lg"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa5-tCW_twG5OXhcX56JSSYYCLQ8_7-UbfgA&usqp=CAU"
+                alt=""
+              />
+
+              <div>
+                <h3 className="text-lg ssm:text-xl text-orange-600">
+                  {" "}
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                </h3>
+                <p className="text-sm py-1 text-orange-600/70 ssm:text-md">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                </p>
+              </div>
+            </div>
+          </Link>
+          <Link to="news">
+            <div className="flex gap-6 shadow-2xl py-4 px-4">
+              <img
+                className=" w-44 h-24 rounded-lg"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa5-tCW_twG5OXhcX56JSSYYCLQ8_7-UbfgA&usqp=CAU"
+                alt=""
+              />
+
+              <div>
+                <h3 className="text-lg ssm:text-xl text-orange-600">
+                  {" "}
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                </h3>
+                <p className="text-sm py-1 text-orange-600/70 ssm:text-md">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                </p>
+              </div>
+            </div>
+          </Link>
         </div>
       </div>
     </div>
