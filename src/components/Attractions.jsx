@@ -31,7 +31,7 @@ const Attractions = () => {
             </div>
             <div className="bg-white/50 rounded-lg h-16 w-28 ">
               <img
-                className="w-full h-full rounded"
+                className="w-full h-full rounded-lg hover:opacity-80"
                 src="https://cdn1.vectorstock.com/i/1000x1000/86/95/weather-cloud-rainy-icon-vector-19558695.jpg"
                 alt=""
               />{" "}
@@ -45,7 +45,7 @@ const Attractions = () => {
         </h2>
         <div className="flex flex-col gap-5">
           <Link to="news">
-            <div className="flex gap-6 shadow-2xl py-4 px-4 hover:scale-105 rounded-lg bg-orange-600/30">
+            <div className="flex gap-6 shadow-2xl py-4 px-4 hover:scale-105 rounded-lg bg-orange-600/20">
               <img
                 className="w-32 h-28 md:w-44 md:h-24 rounded-lg"
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa5-tCW_twG5OXhcX56JSSYYCLQ8_7-UbfgA&usqp=CAU"
@@ -66,7 +66,7 @@ const Attractions = () => {
             </div>
           </Link>
           <Link to="news">
-            <div className="flex gap-6 shadow-2xl py-4 px-4 hover:scale-105 rounded-lg bg-orange-600/30">
+            <div className="flex gap-6 shadow-2xl py-4 px-4 hover:scale-105 rounded-lg bg-orange-600/20">
               <img
                 className="w-32 h-28 md:w-44 md:h-24 rounded-lg"
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa5-tCW_twG5OXhcX56JSSYYCLQ8_7-UbfgA&usqp=CAU"
@@ -87,7 +87,7 @@ const Attractions = () => {
             </div>
           </Link>
           <Link to="news">
-            <div className="flex gap-6 shadow-2xl py-4 px-4 hover:scale-105 rounded-lg bg-orange-600/30">
+            <div className="flex gap-6 shadow-2xl py-4 px-4 hover:scale-105 rounded-lg bg-orange-600/20">
               <img
                 className="w-32 h-28 md:w-44 md:h-24 rounded-lg"
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa5-tCW_twG5OXhcX56JSSYYCLQ8_7-UbfgA&usqp=CAU"
@@ -108,7 +108,7 @@ const Attractions = () => {
             </div>
           </Link>
           <Link to="news">
-            <div className="flex gap-6 shadow-2xl py-4 px-4 hover:scale-105 rounded-lg bg-orange-600/30">
+            <div className="flex gap-6 shadow-2xl py-4 px-4 hover:scale-105 rounded-lg bg-orange-600/20">
               <img
                 className="w-32 h-28 md:w-44 md:h-24 rounded-lg"
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa5-tCW_twG5OXhcX56JSSYYCLQ8_7-UbfgA&usqp=CAU"
