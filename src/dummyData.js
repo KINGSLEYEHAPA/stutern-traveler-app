@@ -1,9 +1,10 @@
 import axios from "axios";
 import {
+  fetchDataEnd,
+  fetchDataStart,
   getWeatherDataError,
   getWeatherDataSuccess,
 } from "./redux/actions/actionCreators";
-import { actionTypes } from "./redux/actions/actionTypes";
 
 export const hotelCards = [
   {
@@ -119,7 +120,7 @@ if (navigator.geolocation) {
 const API_key = process.env.REACT_APP_API_KEY_WEATHER;
 export const getWeatherData = async (dispatch) => {
   try {
-    dispatch({ type: actionTypes.FETCH_DATA_START });
+    dispatch(fetchDataStart());
     const resWeather = await axios.get(
       `https://api.openweathermap.org/data/2.5/weather?lat=${location.lat}&lon=${location.lng}&units=metric&appid=${API_key}`
     );
@@ -127,6 +128,7 @@ export const getWeatherData = async (dispatch) => {
     console.log(resWeather);
     console.log(location);
     dispatch(getWeatherDataSuccess(resWeather?.data));
+    dispatch(fetchDataEnd());
   } catch (err) {
     console.log(err.message);
     dispatch(getWeatherDataError(err.message));

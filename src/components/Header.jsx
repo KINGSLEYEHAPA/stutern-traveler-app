@@ -7,7 +7,7 @@ import { getWeatherData } from "../dummyData";
 import { useDispatch } from "react-redux";
 
 const Header = () => {
-  const [isMobile, setIsMobile] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getWeatherData);
