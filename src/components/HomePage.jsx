@@ -25,21 +25,23 @@ const HomePage = () => {
               next trip.
             </p>
             <button className="bg-orange-600 text-white py-2 px-4 rounded-lg mt-6 hover:bg-white hover:scale-105 hover:text-orange-600 lg:translate-x-[-9rem] translate-x-[-3.8rem] sm:translate-x-[-5rem]">
-              <Link to="/attractions">See Popular Attractions </Link>
+              <Link to="/popular-attractions">See Popular Attractions </Link>
             </button>
           </div>
         </div>
         <aside className="flex  h-56 mx-2 ml-5 gap-4 justify-center  md:flex md:flex-col  md:h-[45rem] md:w-[60rem] md:relative md:bottom-24 md:gap-5">
-          <div className="bg-white/60 w-1/2 flex flex-col space-y-10 p-6 md:h-44 rounded-lg md:text-sm shadow-xl text-orange-300 backdrop-blur-md">
-            <h3 className="">Good Evening Kingsley</h3>
-            <p>
-              Weather to day in Warri is <span>36°C</span>
-            </p>
+          <div className="bg-orange-600 text-center w-1/2 flex flex-col space-y-2 p-3 md:h-44 rounded-lg md:text-sm shadow-xl text-white backdrop-blur-md">
+            <h3 className="">Weather Stats today</h3>
+
+            <span className="text-4xl text-white">36°C</span>
+            <span className="text-md text-white">Broken Clouds</span>
+
             <img src="" alt="weather-img" />
           </div>
-          <div className="w-1/2 md:h-40 bg-orange-600 shadow-xl  rounded-lg">
-            {" "}
-            Current location Stats
+          <div className="w-1/2 md:h-40 bg-white shadow-xl  rounded-lg text-left space-y-4 text-orange-600 p-6 ssm:pl-10 pt-7 text-md">
+            <p>Location: Warri</p>
+            <p>Latitude: 5.55 </p>
+            <p>Longitude: 5.79 </p>
           </div>
         </aside>
       </div>

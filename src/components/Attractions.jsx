@@ -8,7 +8,7 @@ import Map from "./Map";
 const Attractions = () => {
   return (
     <div className="h-[150rem] md:h-[125rem] w-full p-6">
-      <div className="w-full bg-white h-[22rem] shadow-2xl mx-auto  rounded-xl relative  ">
+      <div className="w-full bg-white h-[22rem] shadow-2xl mx-auto  rounded-xl relative md:h-[30rem]  ">
         <img src={imageOne} alt="" className="w-full h-full rounded-xl" />
         <div className="absolute top-8 left-7 w-5/6 h-[18rem] bg-orange-600/20 m-4 text-left py-2 px-4 ssm:flex ssm:flex-row  ssm:gap-24">
           <div className="ssm:w-[100rem]">

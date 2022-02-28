@@ -32,7 +32,7 @@ const Header = () => {
           <p>Home</p>{" "}
         </Link>
         <Link
-          to="/"
+          to="/popular-attractions"
           className="hover:text-orange-600  hover:bg-white p-1 rounded-md font-bold"
         >
           {" "}
@@ -58,7 +58,7 @@ const Header = () => {
           <Link to="/" className="hover:text-orange-600">
             <p>Home</p>{" "}
           </Link>
-          <Link to="/" className=" hover:text-orange-600">
+          <Link to="popular-attractions" className=" hover:text-orange-600">
             {" "}
             <p>Attractions</p>{" "}
           </Link>

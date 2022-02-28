@@ -9,6 +9,11 @@ const News = () => {
           The Headline
         </h2>
         <hr className="border-orange-600 border-b-2" />
+        <img
+          className="mt-8 h-52 ssm:h-96 w-full rounded-lg"
+          src="https://image.shutterstock.com/image-vector/breaking-news-background-planet-260nw-667420906.jpg"
+          alt=""
+        />
         <p className="text-orange-600/60 mt-10">
           <p>Date-</p>
           <p className="mb-10">Author-</p> Lorem ipsum dolor sit amet
