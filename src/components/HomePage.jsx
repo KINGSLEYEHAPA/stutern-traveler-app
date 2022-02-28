@@ -4,8 +4,12 @@ import mainImage from "../assets/images/355150.jpg";
 import { Link } from "react-router-dom";
 import Carousel from "./Carousel";
 import Map from "./Map";
+import { useSelector } from "react-redux";
 
 const HomePage = () => {
+  const appData = useSelector((state) => state.appData);
+  const userLocation = appData.userLocation;
+
   return (
     <div className="flex flex-col w-screen justify-start min-h-[115rem] ">
       <div className="w-full flex flex-col h-4/5 pr-6 md:pr-0 ssm:flex ssm:flex-col gap-14 md:gap-1 md:flex md:flex-row md:justify-between md:items-center md:w-full md:gap-5 md:relative md:left-24  ">
@@ -30,18 +34,22 @@ const HomePage = () => {
           </div>
         </div>
         <aside className="flex  h-56 mx-2 ml-5 gap-4 justify-center  md:flex md:flex-col  md:h-[45rem] md:w-[60rem] md:relative md:bottom-24 md:gap-5">
-          <div className="bg-orange-600 text-center w-1/2 flex flex-col space-y-2 p-3 md:h-44 rounded-lg md:text-sm shadow-xl text-white backdrop-blur-md">
-            <h3 className="">Weather Stats today</h3>
+          <div className="bg-orange-600 text-center w-1/2 flex flex-col space-y-2 p-3 md:h-44 rounded-lg md:text-sm shadow-xl text-white backdrop-blur-md hover:border-white hover:border-2">
+            <h3 className="">Weather Stats today in Warri</h3>
 
             <span className="text-4xl text-white">36°C</span>
             <span className="text-md text-white">Broken Clouds</span>
 
-            <img src="" alt="weather-img" />
+            <img
+              className="w-14 h-14 mx-auto"
+              src=" http://openweathermap.org/img/wn/10d@2x.png"
+              alt="weather-img"
+            />
           </div>
-          <div className="w-1/2 md:h-40 bg-white shadow-xl  rounded-lg text-left space-y-4 text-orange-600 p-6 ssm:pl-10 pt-7 text-md">
-            <p>Location: Warri</p>
-            <p>Latitude: 5.55 </p>
-            <p>Longitude: 5.79 </p>
+          <div className="w-1/2 md:h-40 bg-white shadow-xl  rounded-lg text-left space-y-4 text-orange-600 p-6 ssm:pl-10 pt-7 text-md ssm:text-sm hover:border-orange-600 hover:border-2">
+            <p> Present location: Warri</p>
+            <p>Latitude: {userLocation && userLocation.lat} </p>
+            <p>Longitude: {userLocation && userLocation.lng} </p>
           </div>
         </aside>
       </div>

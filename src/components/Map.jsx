@@ -1,6 +1,6 @@
 import React from "react";
 import GoogleMapReact from "google-map-react";
-import { location } from "../dummyData";
+import { location } from "../redux/actions/actionCreators";
 import { skyOrange } from "../myMapStyles";
 import LocationPin from "./LocationPin";
 

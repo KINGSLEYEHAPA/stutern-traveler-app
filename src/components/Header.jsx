@@ -3,13 +3,16 @@ import { Link } from "react-router-dom";
 import Search from "./Search";
 import { RiMenu5Fill } from "react-icons/ri";
 import kingsley from "../assets/images/kingsley.jpg";
-import { getWeatherData } from "../dummyData";
+import { getWeatherData, location } from "../redux/actions/actionCreators";
+
 import { useDispatch } from "react-redux";
+import { actionTypes } from "../redux/actions/actionTypes";
 
 const Header = () => {
   const [isMobile, setIsMobile] = useState(false);
   const dispatch = useDispatch();
   useEffect(() => {
+    dispatch({ type: actionTypes.USER_LOCATION, payload: location });
     dispatch(getWeatherData);
   }, [dispatch]);
 

@@ -1,11 +1,3 @@
-import axios from "axios";
-import {
-  fetchDataEnd,
-  fetchDataStart,
-  getWeatherDataError,
-  getWeatherDataSuccess,
-} from "./redux/actions/actionCreators";
-
 export const hotelCards = [
   {
     imageSrc:
@@ -102,35 +94,4 @@ export let location = {
   address: "",
   lat: 5.554399,
   lng: 5.793201,
-};
-
-export const displayLocationInfo = (position) => {
-  const lng = position.coords.longitude;
-  const lat = position.coords.latitude;
-  console.log(lat, lng);
-  location.lat = lat;
-  location.lng = lng;
-  location.address = "This is your current location.";
-};
-
-if (navigator.geolocation) {
-  navigator.geolocation.getCurrentPosition(displayLocationInfo);
-}
-
-const API_key = process.env.REACT_APP_API_KEY_WEATHER;
-export const getWeatherData = async (dispatch) => {
-  try {
-    dispatch(fetchDataStart());
-    const resWeather = await axios.get(
-      `https://api.openweathermap.org/data/2.5/weather?lat=${location.lat}&lon=${location.lng}&units=metric&appid=${API_key}`
-    );
-
-    console.log(resWeather);
-    console.log(location);
-    dispatch(getWeatherDataSuccess(resWeather?.data));
-    dispatch(fetchDataEnd());
-  } catch (err) {
-    console.log(err.message);
-    dispatch(getWeatherDataError(err.message));
-  }
 };
