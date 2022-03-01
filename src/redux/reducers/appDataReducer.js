@@ -16,11 +16,17 @@ const appDataReducer = (state = appData, action) => {
     case actionTypes.FETCH_DATA_START:
       return { ...state, isLoading: true };
     case actionTypes.USER_LOCATION:
-      return { ...state, userLocation: payload, isLoading: false };
+      return { ...state, userLocation: payload };
     case actionTypes.FETCH_DATA_ERROR:
       return { ...state, isError: true, error: payload };
     case actionTypes.USER_WEATHER:
-      return { ...state, userWeather: payload, isError: false, error: null };
+      return {
+        ...state,
+        userWeather: payload,
+        isError: false,
+        error: null,
+        isLoading: false,
+      };
 
     default:
       return state;

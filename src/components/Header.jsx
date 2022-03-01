@@ -3,18 +3,43 @@ import { Link } from "react-router-dom";
 import Search from "./Search";
 import { RiMenu5Fill } from "react-icons/ri";
 import kingsley from "../assets/images/kingsley.jpg";
-import { getWeatherData, location } from "../redux/actions/actionCreators";
+import {
+  fetchDataStart,
+  getWeatherDataError,
+  getWeatherDataSuccess,
+  location,
+} from "../redux/actions/actionCreators";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { actionTypes } from "../redux/actions/actionTypes";
+import axios from "axios";
 
 const Header = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const userLocation = useSelector((state) => state.appData.userLocation);
   const dispatch = useDispatch();
+
+  const API_key = process.env.REACT_APP_API_KEY_WEATHER;
+
+  const getWeatherData = async (dispatch) => {
+    try {
+      dispatch(fetchDataStart());
+      const resWeather = await axios.get(
+        `https://api.openweathermap.org/data/2.5/weather?lat=${userLocation.lat}&lon=${userLocation.lng}&units=metric&appid=${API_key}`
+      );
+
+      dispatch(getWeatherDataSuccess(resWeather?.data));
+      console.log(resWeather.data);
+    } catch (err) {
+      console.log(err.message);
+      dispatch(getWeatherDataError(err.message));
+    }
+  };
   useEffect(() => {
     dispatch({ type: actionTypes.USER_LOCATION, payload: location });
+
     dispatch(getWeatherData);
-  }, [dispatch]);
+  }, [dispatch, userLocation]);
 
   return (
     <div className="text-red-800 items-center h-24 relative  flex justify-between w-screen px-6">

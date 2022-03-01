@@ -39,21 +39,3 @@ if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(displayLocationInfo);
 }
 console.log(location);
-
-const API_key = process.env.REACT_APP_API_KEY_WEATHER;
-export const getWeatherData = async (dispatch) => {
-  try {
-    dispatch(fetchDataStart());
-    const resWeather =
-      location !== null &&
-      (await axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?lat=${location.lat}&lon=${location.lng}&units=metric&appid=${API_key}`
-      ));
-
-    dispatch(getWeatherDataSuccess(resWeather?.data));
-    console.log(resWeather.data);
-  } catch (err) {
-    console.log(err.message);
-    dispatch(getWeatherDataError(err.message));
-  }
-};
