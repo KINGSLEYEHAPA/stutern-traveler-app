@@ -2,10 +2,16 @@ import React from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import { hotelCards } from "../dummyData";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Carousel = () => {
+  const reducerState = useSelector((state) => state.appData);
+
+  const attractionsData = useSelector(
+    (state) => state.appData.destinationAttractionData
+  );
+
   const sliderSettings = {
     arrows: true,
     slidesToShow: 3,
@@ -40,30 +46,36 @@ const Carousel = () => {
         Attractions
       </h2>
       <Slider {...sliderSettings}>
-        {hotelCards.map((card, index) => (
-          <Link
-            to="/attractions"
-            key={index}
-            className="w-24 h-60  shadow-xl  pl-4 rounded-lg  "
-            style={{ margin: "0 -10px" }}
-          >
-            {" "}
-            <div>
-              <div className="bg-white/90 backdrop-blur-2xl w-full   rounded-lg  rounded-br-lg rounded-bl-lg ">
-                <img
-                  className="w-full h-48 sm:h-44  rounded-tr-lg rounded-tl-lg"
-                  alt={card.title}
-                  src={card.imageSrc}
-                />
-                <div className="w-full p-2 text-center py-2">
-                  <h2 className="text-orange-600 text-center text-xl ">
-                    {card.title}
-                  </h2>
+        {attractionsData &&
+          attractionsData.map((data, index) => (
+            <Link
+              to="/attractions"
+              key={index}
+              className="w-24 h-60  shadow-xl  pl-4 rounded-lg  "
+              style={{ margin: "0 -10px" }}
+            >
+              {" "}
+              <div>
+                <div className="bg-white/90 backdrop-blur-2xl w-full   rounded-lg  rounded-br-lg rounded-bl-lg ">
+                  <img
+                    className="w-full h-48 sm:h-44  rounded-tr-lg rounded-tl-lg"
+                    alt={data.title}
+                    src={data.result_object.photo.images.original.url}
+                  />
+                  <div className="w-full h-28 p-2 text-center py-2">
+                    <h2 className="text-orange-600 text-center text-xl ">
+                      {data.result_object.name.slice(0, 20)}
+                    </h2>
+                    <p className="text-orange-600/60 text-sm ">
+                      {data.result_object.address
+                        ? data.result_object.address.slice(0, 60)
+                        : `A nice location in to visit ${reducerState.nameOfSearch}`}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-          </Link>
-        ))}
+            </Link>
+          ))}
       </Slider>
     </div>
   );

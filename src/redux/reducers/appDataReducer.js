@@ -7,6 +7,10 @@ const appData = {
   userWeather: null,
   isError: false,
   error: null,
+  destinationAttractionData: [],
+  destinationWeather: [],
+  destinationNews: [],
+  nameOfSearch: "",
 };
 
 const appDataReducer = (state = appData, action) => {
@@ -27,6 +31,38 @@ const appDataReducer = (state = appData, action) => {
         error: null,
         isLoading: false,
       };
+    case actionTypes.DESTINATION_ATTRACTION:
+      return {
+        ...state,
+        destinationAttractionData: payload,
+        isLoading: false,
+        error: null,
+        isError: false,
+      };
+    case actionTypes.DESTINATION_ATTRACTION_ERROR:
+      return { ...state, isError: true, error: payload, isLoading: false };
+    case actionTypes.DESTINATION_WEATHER:
+      return {
+        ...state,
+        destinationWeather: payload,
+        isLoading: false,
+        error: null,
+        isError: false,
+      };
+    case actionTypes.DESTINATION_WEATHER_ERROR:
+      return { ...state, isError: true, error: payload, isLoading: false };
+    case actionTypes.DESTINATION_NEWS:
+      return {
+        ...state,
+        destinationNews: payload,
+        isLoading: false,
+        error: null,
+        isError: false,
+      };
+    case actionTypes.DESTINATION_NEWS_ERROR:
+      return { ...state, isError: true, error: payload, isLoading: false };
+    case actionTypes.DESTINATION_SEARCH_NAME:
+      return { ...state, nameOfSearch: payload };
 
     default:
       return state;

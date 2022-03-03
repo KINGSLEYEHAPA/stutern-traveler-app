@@ -7,7 +7,7 @@ import App from "../App";
 import Attractions from "./Attractions";
 import HomePage from "./HomePage";
 import News from "./News";
-import PopularAttractions from "./PopularAttractions";
+import Error from "./Error";
 
 const ApplicationRoutes = () => {
   return (
@@ -17,11 +17,8 @@ const ApplicationRoutes = () => {
           <Route path="/" element={<App />}>
             <Route index element={<HomePage />} />
             <Route path="attractions" element={<Attractions />} />
-            <Route path="attractions/news" element={<News />} />
-            <Route
-              path="/popular-attractions"
-              element={<PopularAttractions />}
-            />
+            <Route path="attractions/news/:newsId" element={<News />} />
+            <Route path="*" element={<Error />} />
           </Route>
         </Routes>
       </BrowserRouter>

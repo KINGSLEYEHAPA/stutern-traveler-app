@@ -1,10 +1,10 @@
 import React from "react";
 import GoogleMapReact from "google-map-react";
-import { location } from "../redux/actions/actionCreators";
+
 import { skyOrange } from "../myMapStyles";
 import LocationPin from "./LocationPin";
 
-const Map = () => {
+const Map = ({ location }) => {
   return (
     <div className="w-full p-8">
       <div className="w-full md:w-full h-96 mb-10 mt-2 mx-auto flex ">
