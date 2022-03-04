@@ -6,10 +6,10 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const Carousel = () => {
-  const reducerState = useSelector((state) => state.appData);
+  const nameOfSearch = useSelector((state) => state.nameOfSearch);
 
   const attractionsData = useSelector(
-    (state) => state.appData.destinationAttractionData
+    (state) => state.destinationAttractionsData
   );
 
   const sliderSettings = {
@@ -60,7 +60,11 @@ const Carousel = () => {
                   <img
                     className="w-full h-48 sm:h-44  rounded-tr-lg rounded-tl-lg"
                     alt={data.title}
-                    src={data.result_object.photo.images.original.url}
+                    src={
+                      data.result_object.photo.images.original.url
+                        ? data.result_object.photo.images.original.url
+                        : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU6lcZuMlT_CiWJ_tDq7IqDVJYu8cuxVd17g&usqp=CAU"
+                    }
                   />
                   <div className="w-full h-28 p-2 text-center py-2">
                     <h2 className="text-orange-600 text-center text-xl ">
@@ -69,7 +73,7 @@ const Carousel = () => {
                     <p className="text-orange-600/60 text-sm ">
                       {data.result_object.address
                         ? data.result_object.address.slice(0, 60)
-                        : `A nice location in to visit ${reducerState.nameOfSearch}`}
+                        : `A nice location in to visit ${nameOfSearch}`}
                     </p>
                   </div>
                 </div>

@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 import { location } from "../redux/actions/actionCreators";
 
 const HomePage = () => {
-  const appData = useSelector((state) => state.appData);
+  const appData = useSelector((state) => state);
   const userLocation = appData.userLocation;
   const weatherInfo = appData.userWeather;
   const loadingState = appData.isLoading;
@@ -78,9 +78,16 @@ const HomePage = () => {
       )}
       {loadingState && (
         <div className="min-h-screen text-center flex flex-col justify-start items-center ">
-          <p className="text-3xl md:text-5xl mx-auto text-orange-600 font-bold mt-44">
+          <p className="text-2xl md:text-3xl mx-auto text-orange-600 font-bold mt-44 animate-ping">
             Loading...
           </p>
+        </div>
+      )}
+      {appData.isError && (
+        <div className="flex flex-col justify-start items-center min-h-screen ">
+          <h2 className="text-2xl md:text-3xl mt-28 text-orange-600">
+            Could not Fetch User Location and Weather Stats: {appData.error}
+          </h2>
         </div>
       )}
     </div>

@@ -32,12 +32,12 @@ export const getDestinationWeatherError = (error) => ({
   payload: error,
 });
 export const getDestinationAttractionsSuccess = (data) => ({
-  type: actionTypes.DESTINATION_ATTRACTION,
+  type: actionTypes.DESTINATION_ATTRACTIONS,
   payload: data,
 });
 
 export const getDestinationAttractionsError = (error) => ({
-  type: actionTypes.DESTINATION_ATTRACTION_ERROR,
+  type: actionTypes.DESTINATION_ATTRACTIONS_ERROR,
   payload: error,
 });
 

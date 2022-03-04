@@ -16,10 +16,10 @@ import axios from "axios";
 
 const Header = () => {
   const [isMobile, setIsMobile] = useState(false);
-  const userLocation = useSelector((state) => state.appData.userLocation);
+  const userLocation = useSelector((state) => state.userLocation);
   const dispatch = useDispatch();
 
-  const API_key = process.env.REACT_APP_API_KEY_WEATHER;
+  const API_key = "b58babd0dfcc84236d78e08c6b590448";
 
   const getWeatherData = async (dispatch) => {
     try {
@@ -71,7 +71,7 @@ const Header = () => {
           className="hover:text-orange-600  hover:bg-white p-1 rounded-md font-bold"
         >
           {" "}
-          <p>News</p>{" "}
+          <p>About</p>{" "}
         </Link>
       </div>
 
@@ -92,7 +92,7 @@ const Header = () => {
           </Link>
 
           <Link to="/" className="hover:text-orange-600 ">
-            <p>Travel News</p>{" "}
+            <p>About</p>{" "}
           </Link>
         </div>
       )}

@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { RiSearchLine } from "react-icons/ri";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   fetchDataStart,
   getDestinationAttractionsError,
@@ -18,11 +18,14 @@ import { useNavigate } from "react-router-dom";
 const Search = () => {
   const [destinationWord, setDestinationWord] = useState("");
   const [destinationSearchedWord, setDestinationSearchedWord] = useState("");
+  const reducerState = useSelector((state) => state.destinationWeather);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
     setDestinationWord(destinationSearchedWord);
+    console.log(destinationWord + " this is not setting");
+    console.log(reducerState);
     setDestinationSearchedWord("");
     navigate("/attractions");
   };
@@ -47,7 +50,7 @@ const Search = () => {
       },
       headers: {
         "x-rapidapi-host": "travel-advisor.p.rapidapi.com",
-        "x-rapidapi-key": process.env.REACT_APP_API_WEATHER,
+        "x-rapidapi-key": "9bc837decemsh62dd049e8517d88p10dc1cjsn77d59f44d625",
       },
     };
 
@@ -69,13 +72,12 @@ const Search = () => {
       params: { location: destinationWord, format: "json", u: "c" },
       headers: {
         "x-rapidapi-host": "yahoo-weather5.p.rapidapi.com",
-        "x-rapidapi-key": process.env.REACT_APP_API_WEATHER,
+        "x-rapidapi-key": "9bc837decemsh62dd049e8517d88p10dc1cjsn77d59f44d625",
       },
     };
 
     const getWeather = async (dispatch) => {
       try {
-        dispatch(fetchDataStart());
         const resWeather = await axios.get(yahooWeather, rapidOptions);
 
         dispatch(getDestinationWeatherSuccess(resWeather?.data));
@@ -88,9 +90,8 @@ const Search = () => {
 
     const getNews = async (dispatch) => {
       try {
-        dispatch(fetchDataStart());
         const resNews = await axios.get(
-          `http://api.mediastack.com/v1/news?access_key=${process.env.React_APP_API_NEWS}&keywords=${destinationWord}&countries=us`
+          `http://api.mediastack.com/v1/news?access_key=a5bbda34ac723febb9a0b637d9315947&keywords=${destinationWord}&countries=us`
         );
 
         dispatch(getNewDataSuccess(resNews?.data));

@@ -7,7 +7,7 @@ const appData = {
   userWeather: null,
   isError: false,
   error: null,
-  destinationAttractionData: [],
+  destinationAttractionsData: [],
   destinationWeather: [],
   destinationNews: [],
   nameOfSearch: "",
@@ -18,7 +18,7 @@ const appDataReducer = (state = appData, action) => {
 
   switch (type) {
     case actionTypes.FETCH_DATA_START:
-      return { ...state, isLoading: true };
+      return { ...state, isLoading: true, isError: false, error: null };
     case actionTypes.USER_LOCATION:
       return { ...state, userLocation: payload };
     case actionTypes.FETCH_DATA_ERROR:
@@ -27,27 +27,23 @@ const appDataReducer = (state = appData, action) => {
       return {
         ...state,
         userWeather: payload,
-        isError: false,
-        error: null,
+
         isLoading: false,
       };
-    case actionTypes.DESTINATION_ATTRACTION:
+
+    case actionTypes.DESTINATION_ATTRACTIONS:
       return {
         ...state,
-        destinationAttractionData: payload,
+        destinationAttractionsData: payload,
         isLoading: false,
-        error: null,
-        isError: false,
       };
-    case actionTypes.DESTINATION_ATTRACTION_ERROR:
+    case actionTypes.DESTINATION_ATTRACTIONS_ERROR:
       return { ...state, isError: true, error: payload, isLoading: false };
     case actionTypes.DESTINATION_WEATHER:
       return {
         ...state,
         destinationWeather: payload,
         isLoading: false,
-        error: null,
-        isError: false,
       };
     case actionTypes.DESTINATION_WEATHER_ERROR:
       return { ...state, isError: true, error: payload, isLoading: false };
@@ -56,8 +52,6 @@ const appDataReducer = (state = appData, action) => {
         ...state,
         destinationNews: payload,
         isLoading: false,
-        error: null,
-        isError: false,
       };
     case actionTypes.DESTINATION_NEWS_ERROR:
       return { ...state, isError: true, error: payload, isLoading: false };
