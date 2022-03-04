@@ -77,32 +77,33 @@ const Attractions = () => {
               News Headlines{" "}
             </h2>
             <div className="flex flex-col gap-5">
-              {newsData.data.slice(0, 6).map((newsItem, index) => {
-                return (
-                  <Link to={`news/${newsItem.title}`} key={index}>
-                    <div className="flex gap-6 shadow-2xl py-4 px-4 hover:scale-105 rounded-lg bg-orange-600/20">
-                      <img
-                        className="w-32 h-28 md:w-44 md:h-24 rounded-lg"
-                        src={
-                          newsItem.image
-                            ? newsItem.image
-                            : "https://image.shutterstock.com/image-vector/breaking-news-background-planet-260nw-667420906.jpg"
-                        }
-                        alt="News Article Shot"
-                      />
+              {newsData &&
+                newsData.data.slice(0, 6).map((newsItem, index) => {
+                  return (
+                    <Link to={`news/${newsItem.title}`} key={index}>
+                      <div className="flex gap-6 shadow-2xl py-4 px-4 hover:scale-105 rounded-lg bg-orange-600/20">
+                        <img
+                          className="w-32 h-28 md:w-44 md:h-24 rounded-lg"
+                          src={
+                            newsItem.image
+                              ? newsItem.image
+                              : "https://image.shutterstock.com/image-vector/breaking-news-background-planet-260nw-667420906.jpg"
+                          }
+                          alt="News Article Shot"
+                        />
 
-                      <div>
-                        <h3 className="text-md ssm:text-xl text-orange-600">
-                          {newsItem.title}
-                        </h3>
-                        <p className="text-xs py-1 text-orange-600/70 ssm:text-md">
-                          {newsItem.description.slice(0, 100)}
-                        </p>
+                        <div>
+                          <h3 className="text-md ssm:text-xl text-orange-600">
+                            {newsItem.title}
+                          </h3>
+                          <p className="text-xs py-1 text-orange-600/70 ssm:text-md">
+                            {newsItem.description.slice(0, 100)}
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                  </Link>
-                );
-              })}
+                    </Link>
+                  );
+                })}
             </div>
           </div>
 
