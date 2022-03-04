@@ -60,14 +60,14 @@ const Header = () => {
           <p>Home</p>{" "}
         </Link>
         <Link
-          to="/popular-attractions"
+          to="/attractions"
           className="hover:text-orange-600  hover:bg-white p-1 rounded-md font-bold"
         >
           {" "}
           <p>Attractions</p>{" "}
         </Link>
         <Link
-          to="/"
+          to="#about"
           className="hover:text-orange-600  hover:bg-white p-1 rounded-md font-bold"
         >
           {" "}
@@ -86,12 +86,12 @@ const Header = () => {
           <Link to="/" className="hover:text-orange-600">
             <p>Home</p>{" "}
           </Link>
-          <Link to="popular-attractions" className=" hover:text-orange-600">
+          <Link to="/attractions" className=" hover:text-orange-600">
             {" "}
             <p>Attractions</p>{" "}
           </Link>
 
-          <Link to="/" className="hover:text-orange-600 ">
+          <Link to="#about" className="hover:text-orange-600 ">
             <p>About</p>{" "}
           </Link>
         </div>
