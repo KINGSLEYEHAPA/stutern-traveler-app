@@ -79,19 +79,37 @@ const Header = () => {
         <div
           className={
             isMobile
-              ? " backdrop-blur-xl flex flex-col gap-6 bg-orange-600/20 absolute ssm:hidden  top-24 w-full right-4 px-10 py-5 z-20 text-center h-56 text-white space-y-2  ssm transition-all:hidden"
+              ? " backdrop-blur-sm flex flex-col gap-6 bg-orange-600/20 absolute ssm:hidden  top-24 w-full right-4 px-10 py-5 z-20 text-center h-56 text-white space-y-2  ssm transition-all:hidden"
               : "hidden"
           }
         >
-          <Link to="/" className="hover:text-orange-600">
+          <Link
+            to="/"
+            className="hover:text-orange-600  text-2xl "
+            onClick={() => {
+              setIsMobile(false);
+            }}
+          >
             <p>Home</p>{" "}
           </Link>
-          <Link to="/attractions" className=" hover:text-orange-600">
+          <Link
+            to="/attractions"
+            className=" hover:text-orange-600  text-2xl "
+            onClick={() => {
+              setIsMobile(false);
+            }}
+          >
             {" "}
             <p>Attractions</p>{" "}
           </Link>
 
-          <Link to="#about" className="hover:text-orange-600 ">
+          <Link
+            to="#about"
+            className="hover:text-orange-600 text-2xl "
+            onClick={() => {
+              setIsMobile(false);
+            }}
+          >
             <p>About</p>{" "}
           </Link>
         </div>
@@ -109,7 +127,7 @@ const Header = () => {
         onClick={() => {
           setIsMobile(!isMobile);
         }}
-        className="text-orange-600 ml-2 mr-6 text-2xl ssm:hidden hover:text-white"
+        className="text-orange-600 ml-6 mr-6 text-2xl ssm:hidden hover:text-white"
       >
         <RiMenu5Fill />
       </span>

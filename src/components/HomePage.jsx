@@ -34,9 +34,7 @@ const HomePage = () => {
                   next trip.
                 </p>
                 <button className="bg-orange-600 text-white py-2 px-4 rounded-lg mt-6 hover:bg-white hover:scale-105 hover:text-orange-600 lg:translate-x-[-9rem] translate-x-[-3.8rem] sm:translate-x-[-5rem]">
-                  <Link to="/popular-attractions">
-                    See Popular Attractions{" "}
-                  </Link>
+                  <Link to="/attractions">See a Destination </Link>
                 </button>
               </div>
             </div>
