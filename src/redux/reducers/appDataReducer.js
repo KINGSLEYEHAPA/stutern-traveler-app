@@ -10,14 +10,15 @@ const appData = {
   weatherError: null,
   isDestinationAttractionError: false,
   destinationAttractionerror: null,
-  isdestinationWeatherError: false,
+  isDestinationWeatherError: false,
   destinationWeatherError: null,
-  isdestinationNewsError: false,
+  isDestinationNewsError: false,
   destinationNewserror: null,
   destinationAttractionsData: [],
   destinationWeather: [],
   destinationNews: [],
   nameOfSearch: "",
+  attractionState: false,
 };
 
 const appDataReducer = (state = appData, action) => {
@@ -97,7 +98,7 @@ const appDataReducer = (state = appData, action) => {
         isLoading: false,
       };
     case actionTypes.DESTINATION_SEARCH_NAME:
-      return { ...state, nameOfSearch: payload };
+      return { ...state, nameOfSearch: payload, attractionState: true };
 
     default:
       return state;

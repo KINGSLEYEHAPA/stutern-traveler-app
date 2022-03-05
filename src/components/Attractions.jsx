@@ -9,6 +9,7 @@ const Attractions = () => {
   const attractionsData = useSelector(
     (state) => state.destinationAttractionsData
   );
+  const attractionState = useSelector((state) => state.attractionState);
   const weatherData = useSelector((state) => state.destinationWeather);
   const newsData = useSelector((state) => state.destinationNews);
   const isLoading = useSelector((state) => state.isLoading);
@@ -41,7 +42,8 @@ const Attractions = () => {
     <>
       {!isDestinationNewsError &&
         !isDestinationWeatherError &&
-        !isDestinationAttractionError && (
+        !isDestinationAttractionError &&
+        attractionState && (
           <div className="min-h-[160rem] md:h-[120rem] w-full p-6">
             <div className="w-full bg-white h-[22rem] shadow-2xl mx-auto  rounded-xl relative md:h-[30rem]  ">
               {!isDestinationAttractionError && (
@@ -172,6 +174,13 @@ const Attractions = () => {
           {" "}
           <h2 className="text-2xl md:text-3xl mx-auto text-orange-600 font-bold mt-44 animate-ping">
             Loading...
+          </h2>
+        </div>
+      )}
+      {!attractionState && (
+        <div className="min-h-screen text-center flex flex-col justify-start items-center ">
+          <h2 className="text-2xl md:text-4xl mx-auto text-orange-600 font-bold mt-44 animate-bounce">
+            Search to a Location...
           </h2>
         </div>
       )}
