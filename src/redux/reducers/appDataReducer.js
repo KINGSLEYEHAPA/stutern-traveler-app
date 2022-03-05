@@ -98,7 +98,12 @@ const appDataReducer = (state = appData, action) => {
         isLoading: false,
       };
     case actionTypes.DESTINATION_SEARCH_NAME:
-      return { ...state, nameOfSearch: payload, attractionState: true };
+      return {
+        ...state,
+        nameOfSearch: payload,
+        attractionState: true,
+        isDestinationAttractionError: true,
+      };
 
     default:
       return state;
