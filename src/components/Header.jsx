@@ -46,7 +46,7 @@ const Header = () => {
       <div>
         <Link
           to="/"
-          className="text-md ssm:text-xl md:text-2xl lg:text-3xl  text-orange-600 font-bold  pr-3 "
+          className="text-lg ssm:text-xl md:text-2xl lg:text-3xl  text-orange-600 font-bold  pr-3 "
         >
           Traveler
         </Link>
