@@ -13,14 +13,14 @@ const Attractions = () => {
   const newsData = useSelector((state) => state.destinationNews);
   const isLoading = useSelector((state) => state.isLoading);
   const nameOfSearch = useSelector((state) => state.nameOfSearch);
-  const isdestinationNewsError = useSelector(
-    (state) => state.isdestinationNewsError
+  const isDestinationNewsError = useSelector(
+    (state) => state.isDestinationNewsError
   );
   const destinationNewserror = useSelector(
     (state) => state.destinationNewserror
   );
-  const isdestinationWeatherError = useSelector(
-    (state) => state.isdestinationWeatherError
+  const isDestinationWeatherError = useSelector(
+    (state) => state.isDestinationWeatherError
   );
   const destinationWeatherError = useSelector(
     (state) => state.destinationWeatherError
@@ -33,14 +33,14 @@ const Attractions = () => {
   );
   console.log(
     isDestinationAttractionError,
-    isdestinationNewsError,
-    isdestinationWeatherError
+    isDestinationNewsError,
+    isDestinationWeatherError
   );
 
   return (
     <>
-      {!isdestinationNewsError &&
-        !isdestinationWeatherError &&
+      {!isDestinationNewsError &&
+        !isDestinationWeatherError &&
         !isDestinationAttractionError && (
           <div className="min-h-[160rem] md:h-[120rem] w-full p-6">
             <div className="w-full bg-white h-[22rem] shadow-2xl mx-auto  rounded-xl relative md:h-[30rem]  ">
@@ -152,9 +152,9 @@ const Attractions = () => {
             </div>
           </div>
         )}
-      {(isdestinationNewsError ||
+      {(isDestinationNewsError ||
         isDestinationAttractionError ||
-        isdestinationWeatherError) && (
+        isDestinationWeatherError) && (
         <div className="min-h-screen text-center flex flex-col justify-start items-center ">
           {" "}
           <h2 className="text-2xl md:text-3xl mx-auto text-orange-600 font-bold mt-44">

@@ -5,7 +5,9 @@ import { Link, useParams } from "react-router-dom";
 const News = () => {
   const destinationNews = useSelector((state) => state.destinationNews);
   const nameOfSearch = useSelector((state) => state.nameOfSearch);
-  const isError = useSelector((state) => state.isError);
+  const isdestinationNewsError = useSelector(
+    (state) => state.isdestinationNewsError
+  );
 
   const params = useParams();
   const oneNewsItem =
@@ -17,7 +19,7 @@ const News = () => {
 
   return (
     <>
-      {!isError && (
+      {!isdestinationNewsError && (
         <div className="w-screen min-h-screen flex flex-row ">
           <div className="w-[60rem] p-12 bg-white min-h-[35rem] m-10 rounded-lg">
             <h2 className="text-left mb-5 text-2xl ssm:text-3xl text-orange-600 font-bold ">
