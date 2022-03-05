@@ -18,7 +18,7 @@ const HomePage = () => {
       {weatherInfo !== null && (
         <div className="flex flex-col w-screen justify-start min-h-[115rem] z-0">
           <div className="w-full flex flex-col h-4/5 pr-6 md:pr-0 ssm:flex ssm:flex-col gap-14 md:gap-1 md:flex md:flex-row md:justify-between md:items-center md:w-full md:gap-5 md:relative md:left-24  ">
-            <div className=" h-full w-full flex flex-col p-4  relative mx-2 ssm:h-[25rem] md:bottom-24 md:w-[85rem] md:h-[24rem]">
+            <div className=" h-96 sm:h-full w-full flex flex-col p-4  relative mx-2 ssm:h-[25rem] md:bottom-24 md:w-[85rem] md:h-[24rem]">
               <img
                 className="w-full h-full rounded-xl"
                 src={mainImage}
@@ -41,10 +41,10 @@ const HomePage = () => {
             <aside className="flex  h-56 mx-2 ml-5 gap-4 justify-center  md:flex md:flex-col  md:h-[45rem] md:w-[60rem] md:relative md:bottom-24 md:gap-5">
               <div className="bg-orange-600 text-center w-1/2 flex flex-col space-y-2 p-3 md:h-44 rounded-lg md:text-sm shadow-xl text-white backdrop-blur-md hover:border-white hover:border-2">
                 <h3 className="">
-                  Weather Stats today in {weatherInfo && weatherInfo.name}
+                  Temperature in {weatherInfo && weatherInfo.name}
                 </h3>
 
-                <span className="text-4xl text-white">
+                <span className="text-3xl lg:text-4xl  text-white">
                   {weatherInfo && weatherInfo.main.temp}°C
                 </span>
                 <span className="text-md text-white">
@@ -62,10 +62,27 @@ const HomePage = () => {
                   alt="weather-img"
                 />
               </div>
-              <div className="w-1/2 md:h-40 bg-white shadow-xl  rounded-lg text-left space-y-4 text-orange-600 p-6 ssm:pl-10 pt-7 text-md ssm:text-sm hover:border-orange-600 hover:border-2">
-                <p> Present location: {weatherInfo && weatherInfo.name}</p>
-                <p>Latitude: {userLocation && userLocation.lat} </p>
-                <p>Longitude: {userLocation && userLocation.lng} </p>
+              <div className="w-1/2 md:h-40 bg-white shadow-xl  rounded-lg text-left space-y-4 ssm:space-y-2 text-orange-600 p-6 ssm:p-2 ssm:pl-5 pt-7 ssm:pt-8 text-md ssm:text-sm hover:border-orange-600 hover:border-2">
+                <p>
+                  {" "}
+                  Present location:{" "}
+                  <span className="font-bold ">
+                    {weatherInfo && weatherInfo.name}
+                  </span>
+                </p>
+                <p>
+                  Latitude:{" "}
+                  <span className="font-bold ">
+                    {userLocation && userLocation.lat}
+                  </span>{" "}
+                </p>
+                <p>
+                  Longitude:{" "}
+                  <span className="font-bold ">
+                    {" "}
+                    {userLocation && userLocation.lng}
+                  </span>{" "}
+                </p>
               </div>
             </aside>
           </div>
@@ -83,7 +100,7 @@ const HomePage = () => {
       )}
       {appData.isError && (
         <div className="flex flex-col justify-start items-center min-h-screen ">
-          <h2 className="text-md  md:text-3xl mt-28 text-orange-600">
+          <h2 className="text-md  md:text-3xl mt-28 text-orange-600 font-bold">
             Could not Fetch User Location and Weather Stats: {appData.error}
           </h2>
         </div>
