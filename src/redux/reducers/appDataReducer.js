@@ -1,12 +1,19 @@
 import { actionTypes } from "../actions/actionTypes";
 
 const appData = {
-  currentCityWeatherData: [],
   isLoading: false,
   userLocation: null,
   userWeather: null,
-  isError: false,
-  error: null,
+  isLocationError: false,
+  locationError: null,
+  isWeatherError: false,
+  weatherError: null,
+  isDestinationAttractionError: false,
+  destinationAttractionerror: null,
+  isdestinationWeatherError: false,
+  destinationWeatherError: null,
+  isdestinationNewsError: false,
+  destinationNewserror: null,
   destinationAttractionsData: [],
   destinationWeather: [],
   destinationNews: [],
@@ -18,15 +25,34 @@ const appDataReducer = (state = appData, action) => {
 
   switch (type) {
     case actionTypes.FETCH_DATA_START:
-      return { ...state, isLoading: true, isError: false, error: null };
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case actionTypes.FETCH_DATA_START_DESTINATION:
+      return {
+        ...state,
+        isLoading: true,
+        destinationAttractionsData: [],
+        destinationNews: [],
+        destinationWeather: [],
+      };
     case actionTypes.USER_LOCATION:
-      return { ...state, userLocation: payload };
+      return {
+        ...state,
+        userLocation: payload,
+        isLoading: false,
+        isLocationError: false,
+        locationError: null,
+      };
     case actionTypes.FETCH_DATA_ERROR:
-      return { ...state, isError: true, error: payload };
+      return { ...state, isLocationError: true, locationError: payload };
     case actionTypes.USER_WEATHER:
       return {
         ...state,
         userWeather: payload,
+        isWeatherError: false,
+        weatherError: null,
 
         isLoading: false,
       };
@@ -38,7 +64,12 @@ const appDataReducer = (state = appData, action) => {
         isLoading: false,
       };
     case actionTypes.DESTINATION_ATTRACTIONS_ERROR:
-      return { ...state, isError: true, error: payload, isLoading: false };
+      return {
+        ...state,
+        isDestinationAttractionError: true,
+        destinationAttractionerror: payload,
+        isLoading: false,
+      };
     case actionTypes.DESTINATION_WEATHER:
       return {
         ...state,
@@ -46,7 +77,12 @@ const appDataReducer = (state = appData, action) => {
         isLoading: false,
       };
     case actionTypes.DESTINATION_WEATHER_ERROR:
-      return { ...state, isError: true, error: payload, isLoading: false };
+      return {
+        ...state,
+        isdestinationWeatherError: true,
+        destinationWeatherError: payload,
+        isLoading: false,
+      };
     case actionTypes.DESTINATION_NEWS:
       return {
         ...state,
@@ -54,7 +90,12 @@ const appDataReducer = (state = appData, action) => {
         isLoading: false,
       };
     case actionTypes.DESTINATION_NEWS_ERROR:
-      return { ...state, isError: true, error: payload, isLoading: false };
+      return {
+        ...state,
+        isdestinationNewsError: true,
+        destinationNewserror: payload,
+        isLoading: false,
+      };
     case actionTypes.DESTINATION_SEARCH_NAME:
       return { ...state, nameOfSearch: payload };
 

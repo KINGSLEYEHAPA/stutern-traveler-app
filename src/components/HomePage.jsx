@@ -8,14 +8,17 @@ import { useSelector } from "react-redux";
 import { location } from "../redux/actions/actionCreators";
 
 const HomePage = () => {
-  const appData = useSelector((state) => state);
-  const userLocation = appData.userLocation;
-  const weatherInfo = appData.userWeather;
-  const loadingState = appData.isLoading;
+  const locationError = useSelector((state) => state.locationError);
+  const weatherError = useSelector((state) => state.weatherError);
+  const isWeatherError = useSelector((state) => state.isWeatherError);
+  const isLocationError = useSelector((state) => state.isLocationError);
+  const userLocation = useSelector((state) => state.userLocation);
+  const weatherInfo = useSelector((state) => state.userWeather);
+  const loadingState = useSelector((state) => state.isLoading);
 
   return (
     <div>
-      {weatherInfo !== null && (
+      {!isLocationError && !isWeatherError && (
         <div className="flex flex-col w-screen justify-start min-h-[115rem] z-0">
           <div className="w-full flex flex-col h-4/5 pr-6 md:pr-0 ssm:flex ssm:flex-col gap-14 md:gap-1 md:flex md:flex-row md:justify-between md:items-center md:w-full md:gap-5 md:relative md:left-24  ">
             <div className=" h-96 sm:h-full w-full flex flex-col p-4  relative mx-2 ssm:h-[25rem] md:bottom-24 md:w-[85rem] md:h-[24rem]">
@@ -55,7 +58,7 @@ const HomePage = () => {
                   className="w-14 h-14 mx-auto"
                   src={
                     weatherInfo &&
-                    `http://openweathermap.org/img/wn/${
+                    `https://openweathermap.org/img/wn/${
                       weatherInfo && weatherInfo.weather[0].icon
                     }@2x.png`
                   }
@@ -98,10 +101,11 @@ const HomePage = () => {
           </p>
         </div>
       )}
-      {appData.isError && (
+      {isLocationError && isWeatherError && (
         <div className="flex flex-col justify-start items-center min-h-screen ">
           <h2 className="text-md  md:text-3xl mt-28 text-orange-600 font-bold">
-            Could not Fetch User Location and Weather Stats: {appData.error}
+            Could not Fetch User Location and Weather Stats:{" "}
+            {(weatherError, locationError)}
           </h2>
         </div>
       )}

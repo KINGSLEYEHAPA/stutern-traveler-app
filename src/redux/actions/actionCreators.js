@@ -2,6 +2,9 @@ import { actionTypes } from "./actionTypes";
 export const fetchDataStart = () => ({
   type: actionTypes.FETCH_DATA_START,
 });
+export const fetchDataStartUser = () => ({
+  type: actionTypes.FETCH_DATA_START_DESTINATION,
+});
 
 export const getWeatherDataSuccess = (data) => ({
   type: actionTypes.USER_WEATHER,

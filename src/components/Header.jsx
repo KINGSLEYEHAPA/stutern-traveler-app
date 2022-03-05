@@ -18,6 +18,11 @@ const Header = () => {
   const [isMobile, setIsMobile] = useState(false);
   const userLocation = useSelector((state) => state.userLocation);
   const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch({ type: actionTypes.USER_LOCATION, payload: location });
+
+    dispatch(getWeatherData);
+  }, [dispatch, userLocation]);
 
   const API_key = "b58babd0dfcc84236d78e08c6b590448";
 
@@ -35,11 +40,6 @@ const Header = () => {
       dispatch(getWeatherDataError(err.message));
     }
   };
-  useEffect(() => {
-    dispatch({ type: actionTypes.USER_LOCATION, payload: location });
-
-    dispatch(getWeatherData);
-  }, [dispatch, userLocation]);
 
   return (
     <div className="text-red-800 items-center h-24 relative  flex justify-between w-screen px-6">
