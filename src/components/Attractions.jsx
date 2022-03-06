@@ -154,19 +154,20 @@ const Attractions = () => {
         )}
       {(isDestinationNewsError ||
         isDestinationAttractionError ||
-        isDestinationWeatherError) && (
-        <div className="min-h-screen text-center flex flex-col justify-start items-center ">
-          {" "}
-          <h2 className="text-2xl md:text-3xl mx-auto text-orange-600 font-bold mt-44">
-            Failed to Load:
-            {
-              (destinationAttractionError,
-              destinationNewsError,
-              destinationWeatherError)
-            }
-          </h2>
-        </div>
-      )}
+        isDestinationWeatherError) &&
+        !isLoading && (
+          <div className="min-h-screen text-center flex flex-col justify-start items-center ">
+            {" "}
+            <h2 className="text-2xl md:text-3xl mx-auto text-orange-600 font-bold mt-44">
+              Failed to Load:
+              {
+                (destinationAttractionError,
+                destinationNewsError,
+                destinationWeatherError)
+              }
+            </h2>
+          </div>
+        )}
       {isLoading && (
         <div className="h-24 text-center flex flex-col justify-start items-center ">
           {" "}
