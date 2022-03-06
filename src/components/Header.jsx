@@ -121,7 +121,7 @@ const Header = () => {
           src={kingsley}
           alt=""
         />
-        <h3 className="text-xs md:text-sm pt-2 text-white">Welcome Kingsley</h3>
+        <h3 className="text-xs md:text-sm pt-2 text-white">Welcome User</h3>
       </div>
       <span
         onClick={() => {

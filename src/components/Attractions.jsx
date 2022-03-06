@@ -47,13 +47,10 @@ const Attractions = () => {
             <div className="w-full bg-white h-[22rem] shadow-2xl mx-auto  rounded-xl relative md:h-[30rem]  ">
               {!isDestinationAttractionError && (
                 <img
-                  onError={(e) => {
-                    e.target.src = imageOne;
-                  }}
                   src={
                     !isDestinationAttractionError
-                      ? attractionsData[5].result_object.photo.images.original
-                          .url
+                      ? attractionsData[5]?.result_object?.photo?.images
+                          ?.original?.url
                       : imageOne
                   }
                   alt=""
