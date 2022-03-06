@@ -44,6 +44,9 @@ const News = () => {
             <p className="text-orange-600/60 mt-10">
               {destinationNews && oneNewsItem?.description}
             </p>
+            <p className="text-orange-900 mt-6">
+              <a href={destinationNews && oneNewsItem?.link}>Read More </a>
+            </p>
           </div>
           <div className="bg-white w-56 h-[35rem] mt-10 hidden xl:block rounded-lg p-4">
             <h2 className="pb-1 text-orange-600 border-orange-600 border-b-2 mb-5 ">
