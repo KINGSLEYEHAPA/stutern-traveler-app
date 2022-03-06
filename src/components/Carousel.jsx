@@ -66,11 +66,11 @@ const Carousel = () => {
                       <img
                         className="w-full h-48 sm:h-44  rounded-tr-lg rounded-tl-lg"
                         alt={data.title}
-                        onError={(e) => {
-                          e.target.src =
-                            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU6lcZuMlT_CiWJ_tDq7IqDVJYu8cuxVd17g&usqp=CAU";
-                        }}
-                        src={data.result_object.photo.images.original.url}
+                        // onError={(e) => {
+                        //   e.target.src =
+                        //     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU6lcZuMlT_CiWJ_tDq7IqDVJYu8cuxVd17g&usqp=CAU";
+                        // }}
+                        src={data.result_object.photo.images?.original.url}
                       />
                       <div className="w-full h-28 p-2 text-center py-2">
                         <h2 className="text-orange-600 text-center text-xl ">

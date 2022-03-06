@@ -17,14 +17,11 @@ import { useNavigate } from "react-router-dom";
 
 const Search = () => {
   const [destinationWord, setDestinationWord] = useState("");
-  const [destinationSearchedWord, setDestinationSearchedWord] = useState("");
   const reducerState = useSelector((state) => state.destinationWeather);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
-    // setDestinationWord(destinationSearchedWord);
-    console.log(destinationSearchedWord);
     console.log(destinationWord + " this is not setting");
     console.log(reducerState);
 
@@ -55,7 +52,7 @@ const Search = () => {
         headers: {
           "x-rapidapi-host": "travel-advisor.p.rapidapi.com",
           "x-rapidapi-key":
-            "9bc837decemsh62dd049e8517d88p10dc1cjsn77d59f44d625",
+            "35e846bf3amshe76c7944fcf2005p156df0jsn1e2c93db3463",
         },
       };
 
@@ -97,7 +94,7 @@ const Search = () => {
       const getNews = async (dispatch) => {
         try {
           const resNews = await axios.get(
-            `http://api.mediastack.com/v1/news?access_key=a5bbda34ac723febb9a0b637d9315947&keywords=${destinationWord}&countries=us`
+            `http://api.mediastack.com/v1/news?access_key=b4c203815fa77f8225196c1defbb370e&keywords=${destinationWord}&countries=us`
           );
 
           dispatch(getNewDataSuccess(resNews?.data));

@@ -63,6 +63,8 @@ const appDataReducer = (state = appData, action) => {
         ...state,
         destinationAttractionsData: payload,
         isLoading: false,
+        isDestinationAttractionError: false,
+        destinationAttractionerror: null,
       };
     case actionTypes.DESTINATION_ATTRACTIONS_ERROR:
       return {
@@ -76,6 +78,8 @@ const appDataReducer = (state = appData, action) => {
         ...state,
         destinationWeather: payload,
         isLoading: false,
+        isdestinationWeatherError: false,
+        destinationWeatherError: null,
       };
     case actionTypes.DESTINATION_WEATHER_ERROR:
       return {
@@ -89,6 +93,8 @@ const appDataReducer = (state = appData, action) => {
         ...state,
         destinationNews: payload,
         isLoading: false,
+        isDestinationNewsError: false,
+        destinationNewserror: null,
       };
     case actionTypes.DESTINATION_NEWS_ERROR:
       return {

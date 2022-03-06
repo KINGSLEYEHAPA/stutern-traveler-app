@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import imageOne from "../assets/images/355173.jpg";
@@ -149,9 +148,9 @@ const Attractions = () => {
               />
             )}
 
-            <div className="my-10">
+            {/* <div className="my-10">
               <Carousel />
-            </div>
+            </div> */}
           </div>
         )}
       {(isDestinationNewsError ||
