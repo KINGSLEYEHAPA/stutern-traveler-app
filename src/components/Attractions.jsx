@@ -115,8 +115,8 @@ const Attractions = () => {
                           <img
                             className="w-32 h-28 md:w-44 md:h-24 rounded-lg"
                             src={
-                              newsItem.image_url
-                                ? newsItem.image_url
+                              newsItem?.image_url
+                                ? newsItem?.image_url
                                 : "https://image.shutterstock.com/image-vector/breaking-news-background-planet-260nw-667420906.jpg"
                             }
                             alt="News Article Shot"
@@ -124,10 +124,10 @@ const Attractions = () => {
 
                           <div>
                             <h3 className="text-md ssm:text-xl text-orange-600">
-                              {newsItem.title}
+                              {newsItem?.title?.slice(0, 50)}
                             </h3>
                             <p className="text-xs py-1 text-orange-600/70 ssm:text-md">
-                              {newsItem.description.slice(0, 100)}
+                              {newsItem?.description?.slice(0, 100)}
                             </p>
                           </div>
                         </div>
@@ -159,7 +159,7 @@ const Attractions = () => {
           <div className="min-h-screen text-center flex flex-col justify-start items-center ">
             {" "}
             <h2 className="text-2xl md:text-3xl mx-auto text-orange-600 font-bold mt-44">
-              Failed to Load:
+              Getting Location...
               {
                 (destinationAttractionError,
                 destinationNewsError,
