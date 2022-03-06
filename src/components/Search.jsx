@@ -66,7 +66,7 @@ const Search = () => {
           console.log(resAttraction);
         } catch (err) {
           console.log(err.message);
-          dispatch(getDestinationAttractionsError(err.maessage));
+          dispatch(getDestinationAttractionsError(err.message));
         }
       };
       const yahooWeather = "https://yahoo-weather5.p.rapidapi.com/weather";

@@ -9,11 +9,11 @@ const appData = {
   isWeatherError: false,
   weatherError: null,
   isDestinationAttractionError: false,
-  destinationAttractionerror: null,
+  destinationAttractionError: null,
   isDestinationWeatherError: false,
   destinationWeatherError: null,
   isDestinationNewsError: false,
-  destinationNewserror: null,
+  destinationNewsError: null,
   destinationAttractionsData: [],
   destinationWeather: [],
   destinationNews: [],
@@ -75,7 +75,7 @@ const appDataReducer = (state = appData, action) => {
       return {
         ...state,
         isDestinationAttractionError: true,
-        destinationAttractionerror: payload,
+        destinationAttractionError: payload,
         isLoading: false,
       };
     case actionTypes.DESTINATION_WEATHER:
@@ -89,7 +89,7 @@ const appDataReducer = (state = appData, action) => {
     case actionTypes.DESTINATION_WEATHER_ERROR:
       return {
         ...state,
-        isdestinationWeatherError: true,
+        isDestinationWeatherError: true,
         destinationWeatherError: payload,
         isLoading: false,
       };
@@ -105,7 +105,7 @@ const appDataReducer = (state = appData, action) => {
       return {
         ...state,
         isdestinationNewsError: true,
-        destinationNewserror: payload,
+        destinationNewsError: payload,
         isLoading: false,
       };
     case actionTypes.DESTINATION_SEARCH_NAME:

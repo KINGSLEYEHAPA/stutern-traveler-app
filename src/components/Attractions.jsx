@@ -16,8 +16,8 @@ const Attractions = () => {
   const isDestinationNewsError = useSelector(
     (state) => state.isDestinationNewsError
   );
-  const destinationNewserror = useSelector(
-    (state) => state.destinationNewserror
+  const destinationNewsError = useSelector(
+    (state) => state.destinationNewsError
   );
   const isDestinationWeatherError = useSelector(
     (state) => state.isDestinationWeatherError
@@ -28,8 +28,8 @@ const Attractions = () => {
   const isDestinationAttractionError = useSelector(
     (state) => state.isDestinationAttractionError
   );
-  const destinationAttractionerror = useSelector(
-    (state) => state.destinationAttractionerror
+  const destinationAttractionError = useSelector(
+    (state) => state.destinationAttractionError
   );
   console.log(
     isDestinationAttractionError,
@@ -160,8 +160,8 @@ const Attractions = () => {
           <h2 className="text-2xl md:text-3xl mx-auto text-orange-600 font-bold mt-44">
             Failed to Load:
             {
-              (destinationAttractionerror,
-              destinationNewserror,
+              (destinationAttractionError,
+              destinationNewsError,
               destinationWeatherError)
             }
           </h2>
@@ -176,7 +176,7 @@ const Attractions = () => {
         </div>
       )}
       {!attractionState && (
-        <div className="h-24 text-center flex flex-col justify-start items-center ">
+        <div className="min-h-screen text-center flex flex-col justify-start items-center ">
           <h2 className="text-2xl md:text-4xl mx-auto text-orange-600 font-bold mt-44 animate-bounce">
             Search to a Location...
           </h2>
