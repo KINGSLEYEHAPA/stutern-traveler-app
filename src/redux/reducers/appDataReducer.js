@@ -47,7 +47,12 @@ const appDataReducer = (state = appData, action) => {
         locationError: null,
       };
     case actionTypes.FETCH_DATA_ERROR:
-      return { ...state, isLocationError: true, locationError: payload };
+      return {
+        ...state,
+        isLocationError: true,
+        locationError: payload,
+        isLoading: false,
+      };
     case actionTypes.USER_WEATHER:
       return {
         ...state,

@@ -101,7 +101,7 @@ const HomePage = () => {
           </p>
         </div>
       )}
-      {isLocationError && isWeatherError && (
+      {(isLocationError || isWeatherError) && (
         <div className="flex flex-col justify-start items-center min-h-screen ">
           <h2 className="text-md  md:text-3xl mt-28 text-orange-600 font-bold">
             Could not Fetch User Location and Weather Stats:{" "}

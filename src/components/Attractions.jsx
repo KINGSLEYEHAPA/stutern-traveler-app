@@ -75,21 +75,22 @@ const Attractions = () => {
                 <div className="flex mt-10 w-full justify-between px-4 gap-2 text-orange-600 ssm:flex ssm:flex-col ssm:relative ssm:left-6 md:left-8 lg:left-28 xl:left-60">
                   <div className="bg-white rounded-lg h-16 w-28 text-center py-2 hover:text-white hover:bg-orange-600  ">
                     <span className="text-md ">
-                      {weatherData &&
-                        weatherData.current_observation.condition.temperature}
+                      {weatherData !== null &&
+                        weatherData?.current_observation?.condition
+                          ?.temperature}
                       °C
                     </span>
                     <p className=" text-xs">
                       {" "}
-                      {weatherData &&
-                        weatherData.current_observation.condition.text}
+                      {weatherData !== null &&
+                        weatherData?.current_observation?.condition?.text}
                     </p>
                   </div>
                   <div className="bg-white rounded-lg h-16 w-28 text-center py-4 hover:text-white hover:bg-orange-600">
                     <span className=" text-xs">
                       {" "}
-                      {weatherData &&
-                        weatherData.current_observation.wind.speed}
+                      {weatherData !== null &&
+                        weatherData?.current_observation?.wind?.speed}
                       Km/s
                     </span>
                   </div>
@@ -108,7 +109,8 @@ const Attractions = () => {
                 News Headlines{" "}
               </h2>
               <div className="flex flex-col gap-5">
-                {newsData &&
+                {newsData !== null &&
+                  !isDestinationNewsError &&
                   newsData.data.slice(0, 6).map((newsItem, index) => {
                     return (
                       <Link to={`news/${newsItem.title}`} key={index}>
@@ -138,19 +140,19 @@ const Attractions = () => {
               </div>
             </div>
 
-            {weatherData && (
+            {weatherData !== null && (
               <Map
                 location={{
-                  lat: weatherData.location.lat,
-                  lng: weatherData.location.long,
+                  lat: weatherData?.location?.lat,
+                  lng: weatherData?.location?.long,
                   address: `This is ${nameOfSearch}`,
                 }}
               />
             )}
 
-            {/* <div className="my-10">
+            <div className="my-10">
               <Carousel />
-            </div> */}
+            </div>
           </div>
         )}
       {(isDestinationNewsError ||
@@ -159,7 +161,6 @@ const Attractions = () => {
         <div className="min-h-screen text-center flex flex-col justify-start items-center ">
           {" "}
           <h2 className="text-2xl md:text-3xl mx-auto text-orange-600 font-bold mt-44">
-            Network Error:
             {
               (destinationAttractionerror,
               destinationNewserror,

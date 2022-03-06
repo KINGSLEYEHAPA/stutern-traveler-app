@@ -11,7 +11,7 @@ const News = () => {
 
   const params = useParams();
   const oneNewsItem =
-    destinationNews &&
+    destinationNews !== undefined &&
     destinationNews.data.find((item) => {
       return item.title === params.newsId;
     });
