@@ -178,7 +178,7 @@ const Attractions = () => {
       {!attractionState && (
         <div className="min-h-screen text-center flex flex-col justify-start items-center ">
           <h2 className="text-2xl md:text-4xl mx-auto text-orange-600 font-bold mt-44 animate-bounce">
-            Search to a Location...
+            Search for a Location...
           </h2>
         </div>
       )}
