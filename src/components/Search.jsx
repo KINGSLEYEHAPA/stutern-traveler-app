@@ -94,10 +94,10 @@ const Search = () => {
       const getNews = async (dispatch) => {
         try {
           const resNews = await axios.get(
-            `http://api.mediastack.com/v1/news?access_key=b4c203815fa77f8225196c1defbb370e&keywords=${destinationWord}&countries=us`
+            `https://newsdata.io/api/1/news?apikey=pub_5232e0c19774601a9f348a9f115604636c65&q=${destinationWord} `
           );
 
-          dispatch(getNewDataSuccess(resNews?.data));
+          dispatch(getNewDataSuccess(resNews?.data.results));
           console.log(resNews);
         } catch (err) {
           console.log(err.message);

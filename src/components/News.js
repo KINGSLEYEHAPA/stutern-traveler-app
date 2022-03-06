@@ -12,7 +12,7 @@ const News = () => {
   const params = useParams();
   const oneNewsItem =
     destinationNews !== undefined &&
-    destinationNews?.data?.find((item) => {
+    destinationNews?.find((item) => {
       return item.title === params.newsId;
     });
   console.log(oneNewsItem);
@@ -29,17 +29,17 @@ const News = () => {
             <img
               className="mt-8 h-52 ssm:h-[32rem] w-full rounded-lg"
               src={
-                oneNewsItem.image
-                  ? oneNewsItem?.image
+                oneNewsItem?.image_url
+                  ? oneNewsItem?.image_url
                   : "https://image.shutterstock.com/image-vector/breaking-news-background-planet-260nw-667420906.jpg"
               }
               alt=""
             />
             <p className="text-orange-600 font-bold mt-10">
-              {destinationNews && oneNewsItem?.published_at}
+              {destinationNews && oneNewsItem?.pubDate}
             </p>
             <p className="mb-10 text-orange-600/60 font-bold">
-              {destinationNews && oneNewsItem?.author}
+              {destinationNews && oneNewsItem?.creator[0]}
             </p>
             <p className="text-orange-600/60 mt-10">
               {destinationNews && oneNewsItem?.description}
@@ -52,7 +52,7 @@ const News = () => {
             </h2>
             <div className="flex flex-col gap-4">
               {destinationNews &&
-                destinationNews?.data?.slice(0, 6).map((news, index) => {
+                destinationNews?.slice(0, 4).map((news, index) => {
                   return (
                     <Link
                       to={`/attractions/news/${news?.title}`}

@@ -108,15 +108,15 @@ const Attractions = () => {
               <div className="flex flex-col gap-5">
                 {newsData !== null &&
                   !isDestinationNewsError &&
-                  newsData?.data?.slice(0, 6).map((newsItem, index) => {
+                  newsData?.slice(0, 6).map((newsItem, index) => {
                     return (
                       <Link to={`news/${newsItem.title}`} key={index}>
                         <div className="flex gap-6 shadow-2xl py-4 px-4 hover:scale-105 rounded-lg bg-orange-600/20">
                           <img
                             className="w-32 h-28 md:w-44 md:h-24 rounded-lg"
                             src={
-                              newsItem.image
-                                ? newsItem.image
+                              newsItem.image_url
+                                ? newsItem.image_url
                                 : "https://image.shutterstock.com/image-vector/breaking-news-background-planet-260nw-667420906.jpg"
                             }
                             alt="News Article Shot"
