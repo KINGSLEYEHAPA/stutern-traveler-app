@@ -44,11 +44,11 @@ const HomePage = () => {
             <aside className="flex  h-56 mx-2 ml-5 gap-4 justify-center  md:flex md:flex-col  md:h-[45rem] md:w-[60rem] md:relative md:bottom-24 md:gap-5">
               <div className="bg-orange-600 text-center w-1/2 flex flex-col space-y-2 p-3 md:h-44 rounded-lg md:text-sm shadow-xl text-white backdrop-blur-md hover:border-white hover:border-2">
                 <h3 className="">
-                  Temperature in {weatherInfo && weatherInfo.name}
+                  Temperature in {weatherInfo && weatherInfo?.name}
                 </h3>
 
                 <span className="text-3xl lg:text-4xl  text-white">
-                  {weatherInfo && weatherInfo.main.temp}°C
+                  {weatherInfo && weatherInfo?.main?.temp}°C
                 </span>
                 <span className="text-md text-white">
                   {weatherInfo && weatherInfo.weather[0].description}
@@ -59,7 +59,7 @@ const HomePage = () => {
                   src={
                     weatherInfo &&
                     `https://openweathermap.org/img/wn/${
-                      weatherInfo && weatherInfo.weather[0].icon
+                      weatherInfo && weatherInfo?.weather[0]?.icon
                     }@2x.png`
                   }
                   alt="weather-img"
@@ -70,20 +70,20 @@ const HomePage = () => {
                   {" "}
                   Present location:{" "}
                   <span className="font-bold ">
-                    {weatherInfo && weatherInfo.name}
+                    {weatherInfo && weatherInfo?.name}
                   </span>
                 </p>
                 <p>
                   Latitude:{" "}
                   <span className="font-bold ">
-                    {userLocation && userLocation.lat}
+                    {userLocation && userLocation?.lat}
                   </span>{" "}
                 </p>
                 <p>
                   Longitude:{" "}
                   <span className="font-bold ">
                     {" "}
-                    {userLocation && userLocation.lng}
+                    {userLocation && userLocation?.lng}
                   </span>{" "}
                 </p>
               </div>
@@ -102,7 +102,7 @@ const HomePage = () => {
         </div>
       )}
       {(isLocationError || isWeatherError) && (
-        <div className="flex flex-col justify-start items-center min-h-screen ">
+        <div className="flex flex-col justify-start items-center min-h-screen p-8">
           <h2 className="text-md  md:text-3xl mt-28 text-orange-600 font-bold">
             Could not Fetch User Location and Weather Stats:{" "}
             {(weatherError, locationError)}
