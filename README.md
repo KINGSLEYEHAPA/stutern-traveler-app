@@ -1,3 +1,7 @@
+The Travel App
+
+The Travel App project is an application I wrote with Reactjs, Tailwind CSS,React Router and React Redux. The application takes in a location from the User and makes several API calls to get attractions, weather information and news about the location the user wish to view. The app has google maps integrated to show the location the user is viewing and also on the home page to display user location. Note:on first visit the app require user permission to access current location.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -123,7 +123,10 @@ const Search = () => {
           }}
         />
       </form>
-      <span className="absolute cursor-pointer right-2 top-2.5 text-sm text-white font-bold md:top-2.5 md:text-xl md:right-3 ssm:translate-x-4">
+      <span
+        onClick={handleSubmit}
+        className="absolute cursor-pointer right-2 top-2.5 text-sm text-white font-bold md:top-2.5 md:text-xl md:right-3 ssm:translate-x-4"
+      >
         <RiSearchLine />
       </span>
     </div>
