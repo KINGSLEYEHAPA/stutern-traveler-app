@@ -158,6 +158,7 @@ const Attractions = () => {
         <div className="min-h-screen text-center flex flex-col justify-start items-center ">
           {" "}
           <h2 className="text-2xl md:text-3xl mx-auto text-orange-600 font-bold mt-44">
+            Failed to Load:
             {
               (destinationAttractionerror,
               destinationNewserror,
@@ -167,7 +168,7 @@ const Attractions = () => {
         </div>
       )}
       {isLoading && (
-        <div className="min-h-screen text-center flex flex-col justify-start items-center ">
+        <div className="h-24 text-center flex flex-col justify-start items-center ">
           {" "}
           <h2 className="text-2xl md:text-3xl mx-auto text-orange-600 font-bold mt-44 animate-ping">
             Loading...
@@ -175,7 +176,7 @@ const Attractions = () => {
         </div>
       )}
       {!attractionState && (
-        <div className="min-h-screen text-center flex flex-col justify-start items-center ">
+        <div className="h-24 text-center flex flex-col justify-start items-center ">
           <h2 className="text-2xl md:text-4xl mx-auto text-orange-600 font-bold mt-44 animate-bounce">
             Search to a Location...
           </h2>
