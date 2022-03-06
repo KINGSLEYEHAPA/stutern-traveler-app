@@ -108,7 +108,7 @@ const Attractions = () => {
               <div className="flex flex-col gap-5">
                 {newsData !== null &&
                   !isDestinationNewsError &&
-                  newsData.data.slice(0, 6).map((newsItem, index) => {
+                  newsData?.data?.slice(0, 6).map((newsItem, index) => {
                     return (
                       <Link to={`news/${newsItem.title}`} key={index}>
                         <div className="flex gap-6 shadow-2xl py-4 px-4 hover:scale-105 rounded-lg bg-orange-600/20">
